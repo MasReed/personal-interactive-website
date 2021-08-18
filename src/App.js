@@ -20,14 +20,15 @@ function App() {
       </AppBar>
 
 
-      <header id='top'>Header</header>
-
-      <div id='content' style={{ flex: 1 }}>
-        <Box>
-          <div id='about'></div>
-          <AboutSection />
+      <header id='top' >
+        <Box p={5} border={1}>
+          Header
         </Box>
-      </div>
+      </header>
+
+      <Box id='content' style={{ flex: 1 }}>
+        <AboutSection />
+      </Box>
 
       <PageFooter />
     </Box>
