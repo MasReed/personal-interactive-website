@@ -1,16 +1,22 @@
+import AppBar from '@material-ui/core/AppBar'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
+import Tab from '@material-ui/core/Tab'
+import Tabs from '@material-ui/core/Tabs'
+import Toolbar from '@material-ui/core/Toolbar'
 
 function App() {
   return (
     <>
-      <Container>
-        <h2>Hello, Masons fans. From gh pages.</h2>
-        <a href='http://monsed.com'>homepage</a>
-        <br />
-        <a href='http://restaurant.monsed.com'>Nodo Manager Project</a>
-      </Container>
+      <AppBar position='sticky'>
+        <Toolbar>
+          <Tabs value={0}>
+            <Tab label='Home' href='http://monsed.com' />
+            <Tab label='Projects' href='http://restaurant.monsed.com' />
+          </Tabs>
+        </Toolbar>
+      </AppBar>
 
       {/* Profile & About Section */}
       <Box m={0} py={5}>
@@ -50,7 +56,7 @@ function App() {
           </p>
 
           <hr />
-          <Button variant='contained'>
+          <Button variant='contained' color='primary'>
             This is a button
           </Button>
         </Container>
