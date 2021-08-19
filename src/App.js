@@ -6,6 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 
 import AboutSection from './AboutSection'
 import PageFooter from './PageFooter'
+import SectionLayout from './SectionLayout'
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
 
       <Box id='content' style={{ flex: 1 }}>
         <AboutSection />
+        <SectionLayout sectionHeader={'Section Header'}>
+          <h4>Content</h4>
+        </SectionLayout>
       </Box>
 
       <PageFooter />
