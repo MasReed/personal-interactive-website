@@ -4,6 +4,7 @@ import Tab from '@material-ui/core/Tab'
 import Tabs from '@material-ui/core/Tabs'
 import Toolbar from '@material-ui/core/Toolbar'
 
+import AboutSection from './AboutSection'
 import PageFooter from './PageFooter'
 import SectionLayout from './SectionLayout'
 
@@ -29,13 +30,23 @@ function App() {
 
       <header id='top' >
         <Box p={5} border={1}>
-          Header
+          Welcome Header
         </Box>
       </header>
 
       {/* Main Content of Page */}
       <Box id='content' style={{ flex: 1 }}>
         {/* About */}
+        <SectionLayout
+          sectionHeader={'Welcome to My Resume'}
+          theme={{
+            backgroundColor: white,
+            color: purple
+          }}
+        >
+          <AboutSection />
+        </SectionLayout>
+
         {/* Skills */}
         <SectionLayout
           sectionHeader={'Tech Skills'}
