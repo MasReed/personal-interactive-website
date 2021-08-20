@@ -63,6 +63,9 @@ export default function PageFooter () {
                   Github
                 </Link>
               </Box>
+              <Box>
+                <p>Mostly coded during an 8hr roadtrip to Ohio</p>
+              </Box>
             </Grid>
           </Grid>
           <Box textAlign='center' mt={3} mb={0} pt={9} pb={2}>

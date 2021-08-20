@@ -4,7 +4,8 @@ import Tab from '@material-ui/core/Tab'
 import Tabs from '@material-ui/core/Tabs'
 import Toolbar from '@material-ui/core/Toolbar'
 
-import AboutSection from './AboutSection'
+import AboutContent from './AboutContent'
+import TechContent from './TechContent'
 import PageFooter from './PageFooter'
 import SectionLayout from './SectionLayout'
 
@@ -44,7 +45,7 @@ function App() {
             color: purple
           }}
         >
-          <AboutSection />
+          <AboutContent />
         </SectionLayout>
 
         {/* Skills */}
@@ -55,7 +56,7 @@ function App() {
             color: cream
           }}
         >
-          <h4>Content?</h4>
+          <TechContent />
         </SectionLayout>
 
         {/* Experience */}
