@@ -5,6 +5,7 @@ import Tabs from '@material-ui/core/Tabs'
 import Toolbar from '@material-ui/core/Toolbar'
 
 import AboutContent from './AboutContent'
+import ExperienceContent from './ExperienceContent'
 import TechContent from './TechContent'
 import PageFooter from './PageFooter'
 import SectionLayout from './SectionLayout'
@@ -67,7 +68,7 @@ function App() {
             color: purple
           }}
         >
-          <h4>Content Here</h4>
+          <ExperienceContent />
         </SectionLayout>
 
         {/* Education */}
