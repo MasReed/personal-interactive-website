@@ -4,7 +4,6 @@ import Tab from '@material-ui/core/Tab'
 import Tabs from '@material-ui/core/Tabs'
 import Toolbar from '@material-ui/core/Toolbar'
 
-import AboutSection from './AboutSection'
 import PageFooter from './PageFooter'
 import SectionLayout from './SectionLayout'
 
@@ -28,9 +27,14 @@ function App() {
       </header>
 
       <Box id='content' style={{ flex: 1 }}>
-        <AboutSection />
-        <SectionLayout sectionHeader={'Section Header'}>
-          <h4>Content</h4>
+        <SectionLayout
+          sectionHeader={'Section Header'}
+          theme={{
+            backgroundColor: '#282638',
+            color: '#f5cdaa'
+          }}
+        >
+          <h4>Content?</h4>
         </SectionLayout>
       </Box>
 
