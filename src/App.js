@@ -13,103 +13,92 @@ import TechContent from './TechContent'
 import PageFooter from './PageFooter'
 import SectionLayout from './SectionLayout'
 
+import { ThemeProvider } from '@material-ui/styles'
+import theme from './theme'
+
 function App() {
 
-  const purple = '#282638'
-  const orange = '#ea5e42'
-  const cream = '#f5cdaa'
-  const gray = '#49464d'
-  const white = '#EBF2FF'
-
   return (
-    <Box style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-      <AppBar position='sticky'>
-        <Toolbar>
-          <Tabs value={0}>
-            <Tab label='Home' href='http://monsed.com' />
-            <Tab label='Projects' href='http://restaurant.monsed.com' />
-          </Tabs>
-        </Toolbar>
-      </AppBar>
+    <ThemeProvider theme={theme}>
+      <Box style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <AppBar position='sticky'>
+          <Toolbar>
+            <Tabs value={0}>
+              <Tab label='Home' href='http://monsed.com' />
+              <Tab label='Projects' href='http://restaurant.monsed.com' />
+            </Tabs>
+          </Toolbar>
+        </AppBar>
 
 
-      <header id='top' >
-        <Box p={5} border={1}>
-          Welcome Header
+        <header id='top' >
+          <Box p={5} border={1}>
+            Welcome Header
+          </Box>
+        </header>
+
+        {/* Main Content of Page */}
+        <Box id='content' style={{ flex: 1 }}>
+          {/* About */}
+          <SectionLayout
+            sectionHeader={'Welcome to My Resume'}
+            backgroundColor={theme.palette.white.main}
+            color={theme.palette.primary.main}
+          >
+            <AboutContent />
+          </SectionLayout>
+
+          {/* Skills */}
+          <SectionLayout
+            sectionHeader={'Tech Skills'}
+            backgroundColor={theme.palette.primary.main}
+            color={theme.palette.cream.main}
+          >
+            <TechContent />
+          </SectionLayout>
+
+          { console.log(theme.palette) }
+
+          {/* Experience */}
+          <SectionLayout
+            sectionHeader={'Experience'}
+            backgroundColor={theme.palette.white.main}
+            color={theme.palette.primary.main}
+          >
+            <ExperienceContent />
+          </SectionLayout>
+
+          {/* Education */}
+          <SectionLayout
+            sectionHeader={'Education'}
+            backgroundColor={theme.palette.primary.main}
+            color={theme.palette.cream.main}
+          >
+            <EducationContent />
+          </SectionLayout>
+
+          {/* Projects */}
+          <SectionLayout
+            sectionHeader={'Projects'}
+            backgroundColor={theme.palette.white.main}
+            color={theme.palette.primary.main}
+          >
+            <ProjectsContent />
+          </SectionLayout>
+
+          {/* Contact */}
+          <SectionLayout
+            sectionHeader={'Get In Touch'}
+            backgroundColor={theme.palette.secondary.main}
+            color={theme.palette.primary.main}
+          >
+            <Link href="mailto:name@email.com">Email</Link>
+          </SectionLayout>
         </Box>
-      </header>
 
-      {/* Main Content of Page */}
-      <Box id='content' style={{ flex: 1 }}>
-        {/* About */}
-        <SectionLayout
-          sectionHeader={'Welcome to My Resume'}
-          theme={{
-            backgroundColor: white,
-            color: purple
-          }}
-        >
-          <AboutContent />
-        </SectionLayout>
-
-        {/* Skills */}
-        <SectionLayout
-          sectionHeader={'Tech Skills'}
-          theme={{
-            backgroundColor: purple,
-            color: cream
-          }}
-        >
-          <TechContent />
-        </SectionLayout>
-
-        {/* Experience */}
-        <SectionLayout
-          sectionHeader={'Experience'}
-          theme={{
-            backgroundColor: white,
-            color: purple
-          }}
-        >
-          <ExperienceContent />
-        </SectionLayout>
-
-        {/* Education */}
-        <SectionLayout
-          sectionHeader={'Education'}
-          theme={{
-            backgroundColor: purple,
-            color: cream
-          }}
-        >
-          <EducationContent />
-        </SectionLayout>
-
-        {/* Projects */}
-        <SectionLayout
-          sectionHeader={'Projects'}
-          theme={{
-            backgroundColor: white,
-            color: purple
-          }}
-        >
-          <ProjectsContent />
-        </SectionLayout>
-
-        {/* Contact */}
-        <SectionLayout
-          sectionHeader={'Get In Touch'}
-          theme={{
-            backgroundColor: orange,
-            color: purple
-          }}
-        >
-          <Link href="mailto:name@email.com">Email</Link>
-        </SectionLayout>
+        <PageFooter />
       </Box>
-
-      <PageFooter />
-    </Box>
+    </ThemeProvider>
   )
 }
 

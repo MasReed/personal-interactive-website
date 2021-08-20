@@ -14,7 +14,9 @@ export default function ExperienceContent() {
           <Grid item sm={4}>
             <Box>
               <h3>Discovery World | Science + Technology Museum</h3>
-              <h4>April 2019 - October 2020</h4>
+              <h4 style={{ color: '#49464d' }}>
+                April 2019 - October 2020
+              </h4>
             </Box>
           </Grid>
           <Grid item sm={8}>

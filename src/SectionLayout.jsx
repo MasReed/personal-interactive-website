@@ -3,7 +3,7 @@ import React from 'react'
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 
-export default function SectionLayout({ children, sectionHeader, theme }) {
+export default function SectionLayout({ children, sectionHeader, ...props }) {
   const headingStyle = {
     fontFamily: '"Roboto Slab", serif',
     fontSize: '3.175rem',
@@ -12,7 +12,7 @@ export default function SectionLayout({ children, sectionHeader, theme }) {
     margin: '20px 0',
     textAlign: 'center',
     lineHeight: 1.2,
-    color: theme.color,
+    color: props.color,
   }
 
   const hrStyle = {
@@ -22,7 +22,7 @@ export default function SectionLayout({ children, sectionHeader, theme }) {
   }
 
   const sectionStyle = {
-    backgroundColor: theme.backgroundColor,
+    backgroundColor: props.backgroundColor,
     margin: 0,
     padding: '50px'
   }

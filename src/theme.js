@@ -1,5 +1,11 @@
 import { createTheme } from '@material-ui/core/styles'
 
+const purple = '#282638'
+const orange = '#ea5e42'
+const cream = '#f5cdaa'
+const gray = '#49464d'
+const white = '#EBF2FF'
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -13,11 +19,23 @@ const theme = createTheme({
       main: '#ea5e42',
       dark: '#b12b18',
       contrastText: '#000000'
+    },
+    cream: {
+      main: '#f5cdaa'
+    },
+    gray: {
+      main: '#49464d'
+    },
+    white: {
+      main: '#EBF2FF'
     }
   },
   status: {
     danger: '#FF0000'
   },
+  text: {
+    purple: '#514e62'
+  }
 })
 
 export default theme
