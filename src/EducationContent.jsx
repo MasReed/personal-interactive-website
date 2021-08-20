@@ -78,7 +78,7 @@ export default function EducationContent() {
             <Box>
               <h5>Bachelors of Science - Astronomy; Physics</h5>
               <p>Python, numpy, matplotlib, astropy, HTML, CSS</p>
-              <Link href='https://astro.physics.uiowa'>Dept. of Physics and Astronomy</Link>
+              <Link href='https://physics.uiowa.edu/undergraduate/bs-astronomy'>Dept. of Physics and Astronomy</Link>
             </Box>
           </Grid>
         </Grid>
