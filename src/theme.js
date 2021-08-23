@@ -1,10 +1,10 @@
 import { createTheme } from '@material-ui/core/styles'
 
-const purple = '#282638'
-const orange = '#ea5e42'
-const cream = '#f5cdaa'
-const gray = '#49464d'
-const white = '#EBF2FF'
+// const purple = '#282638'
+// const orange = '#ea5e42'
+// const cream = '#f5cdaa'
+// const gray = '#49464d'
+// const white = '#EBF2FF'
 
 const theme = createTheme({
   palette: {
