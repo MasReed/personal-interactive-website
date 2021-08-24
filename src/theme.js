@@ -6,6 +6,7 @@ import { createTheme } from '@material-ui/core/styles'
 // const gray = '#49464d'
 // const white = '#EBF2FF'
 
+const defaultTheme = createTheme()
 const theme = createTheme({
   palette: {
     primary: {

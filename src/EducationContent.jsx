@@ -4,22 +4,25 @@ import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Link from '@material-ui/core/Link'
+import Typography from '@material-ui/core/Typography'
 
 export default function EducationContent() {
   return (
     <Box>
       <Container>
         {/* FullStackOpen Education */}
-        <Grid container spacing={5}>
+        <Grid container spacing={0}>
           <Grid item sm={4}>
-            <Box>
-              <h3>FullStackOpen</h3>
-              <p>March 2021 - Present</p>
+            <Box style={{ color: '#f5cdaa' }}>
+              <Typography variant={'subtitle1'}>
+                <strong>FullStackOpen</strong>
+              </Typography>
+              <Typography variant={'body2'}>March 2021 - Present</Typography>
             </Box>
           </Grid>
           <Grid item sm={8}>
             <Box>
-                <h5>An introduction to modern web application development with JavaScript</h5>
+                <h4>An introduction to modern web application development with JavaScript</h4>
                 <p>
                   Single page applications with ReactJS that use REST APIs built with Node.js.
                   This covered testing, configuration and environment management, and the use of
@@ -33,7 +36,7 @@ export default function EducationContent() {
         </Grid>
 
         {/* Udemy Education */}
-        <Grid container spacing={5}>
+        <Grid container spacing={0}>
           <Grid item sm={4}>
             <Box>
               <h3>Udemy</h3>
@@ -42,7 +45,7 @@ export default function EducationContent() {
           </Grid>
           <Grid item sm={8}>
             <Box>
-              <h5>The Complete 2021 Web Development Bootcamp</h5>
+              <h4>The Complete 2021 Web Development Bootcamp</h4>
               <p>HTML5, CSS3, Bootstrap4, JavaScript, jQuery</p>
               <Link href='https://www.udemy.com/course/the-complete-web-development-bootcamp/'>Udemy Course</Link>
             </Box>
@@ -50,7 +53,7 @@ export default function EducationContent() {
         </Grid>
 
         {/* DataQuest Education */}
-        <Grid container spacing={5}>
+        <Grid container spacing={0}>
           <Grid item sm={4}>
             <Box>
               <h3>DataQuest</h3>
@@ -59,7 +62,7 @@ export default function EducationContent() {
           </Grid>
           <Grid item sm={8}>
             <Box>
-              <h5>Data Analyst in Python</h5>
+              <h4>Data Analyst in Python</h4>
               <p>Python, pandas, SQL</p>
               <Link href='https://www.dataquest.io/path/data-analyst/'>Data Analyst Path</Link>
             </Box>
@@ -67,7 +70,7 @@ export default function EducationContent() {
         </Grid>
 
         {/* U Iowa Education */}
-        <Grid container spacing={5}>
+        <Grid container spacing={0}>
           <Grid item sm={4}>
             <Box>
               <h3>University of Iowa</h3>
@@ -76,7 +79,7 @@ export default function EducationContent() {
           </Grid>
           <Grid item sm={8}>
             <Box>
-              <h5>Bachelors of Science - Astronomy; Physics</h5>
+              <h4>Bachelors of Science - Astronomy; Physics</h4>
               <p>Python, numpy, matplotlib, astropy, HTML, CSS</p>
               <Link href='https://physics.uiowa.edu/undergraduate/bs-astronomy'>Dept. of Physics and Astronomy</Link>
             </Box>
