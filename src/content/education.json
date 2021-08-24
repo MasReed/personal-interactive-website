@@ -1,0 +1,15 @@
+[
+  {
+    "institute": "FullStackOpen",
+    "dates": "March 2021 - Present",
+    "titles": [
+      {
+        "title": "An introduction to modern web application development with Javascript",
+        "description": "Single page applications with ReactJS that use REST APIs built with Node.js. This covered testing, configuration and environment management, and the use of MongoDB for storing the application’s data. The course content is the same as in the Full stack course held at the Department of Computer Science at the University of Helsinki in Spring 2020."
+      }
+    ]
+  },
+  {
+
+  }
+]

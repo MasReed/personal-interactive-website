@@ -6,30 +6,55 @@ import Grid from '@material-ui/core/Grid'
 import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
 
+import { makeStyles } from '@material-ui/core/styles'
+
+import theme from './theme'
+import education from './content/education.json'
+
+const useStyles = makeStyles({
+  dateText: {
+    color: theme.palette.cream.main
+  },
+  eduInstitute: {
+    color: theme.palette.cream.main
+  },
+  eduTitle: {
+    color: theme.palette.orange.main
+  },
+  eduDetails: {
+    color: theme.palette.white.main
+  }
+})
+
+
 export default function EducationContent() {
+  const classes = useStyles()
+
+  console.log(education)
+
   return (
     <Box>
       <Container>
         {/* FullStackOpen Education */}
         <Grid container spacing={0}>
           <Grid item sm={4}>
-            <Box style={{ color: '#f5cdaa' }}>
-              <Typography variant={'subtitle1'}>
-                <strong>FullStackOpen</strong>
+            <Box >
+              <Typography className={classes.eduInstitute} variant={'subtitle1'}>
+                <strong>{education[0].institute}</strong>
               </Typography>
-              <Typography variant={'body2'}>March 2021 - Present</Typography>
+              <Typography className={classes.dateText} variant={'body2'}>
+                {education[0].dates}
+              </Typography>
             </Box>
           </Grid>
           <Grid item sm={8}>
             <Box>
-                <h4>An introduction to modern web application development with JavaScript</h4>
-                <p>
-                  Single page applications with ReactJS that use REST APIs built with Node.js.
-                  This covered testing, configuration and environment management, and the use of
-                  MongoDB for storing the application’s data. The course content is the same as
-                  in the Full stack course held at the Department of Computer Science at the
-                  University of Helsinki in Spring 2020.
-                </p>
+                <Typography className={classes.eduTitle} variant={'h6'}>
+                  {education[0].titles[0].title}
+                </Typography>
+                <Typography className={classes.eduDetails} variant={'body2'}>
+                  {education[0].titles[0].description}
+                </Typography>
                 <Link href='https://fullstackopen.com/en/about/'>FullStackOpen</Link>
             </Box>
           </Grid>
