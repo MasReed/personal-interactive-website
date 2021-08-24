@@ -13,92 +13,89 @@ import TechContent from './TechContent'
 import PageFooter from './PageFooter'
 import SectionLayout from './SectionLayout'
 
-import { ThemeProvider } from '@material-ui/styles'
 import theme from './theme'
 
 function App() {
 
   return (
-    <ThemeProvider theme={theme}>
-      <Box style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        <AppBar position='sticky'>
-          <Toolbar>
-            <Tabs value={0}>
-              <Tab label='Home' href='http://monsed.com' />
-              <Tab label='Projects' href='http://restaurant.monsed.com' />
-            </Tabs>
-          </Toolbar>
-        </AppBar>
+    <Box style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <AppBar position='sticky'>
+        <Toolbar>
+          <Tabs value={0}>
+            <Tab label='Home' href='http://monsed.com' />
+            <Tab label='Projects' href='http://restaurant.monsed.com' />
+          </Tabs>
+        </Toolbar>
+      </AppBar>
 
 
-        <header id='top' >
-          <Box p={5} border={1}>
-            Welcome Header
-          </Box>
-        </header>
-
-        {/* Main Content of Page */}
-        <Box id='content' style={{ flex: 1 }}>
-          {/* About */}
-          <SectionLayout
-            sectionHeader={'Welcome to My Resume'}
-            backgroundColor={theme.palette.white.main}
-            color={theme.palette.primary.main}
-          >
-            <AboutContent />
-          </SectionLayout>
-
-          {/* Skills */}
-          <SectionLayout
-            sectionHeader={'Tech Skills'}
-            backgroundColor={theme.palette.primary.main}
-            color={theme.palette.cream.main}
-          >
-            <TechContent />
-          </SectionLayout>
-
-          { console.log(theme.palette) }
-
-          {/* Experience */}
-          <SectionLayout
-            sectionHeader={'Experience'}
-            backgroundColor={theme.palette.white.main}
-            color={theme.palette.primary.main}
-          >
-            <ExperienceContent />
-          </SectionLayout>
-
-          {/* Education */}
-          <SectionLayout
-            sectionHeader={'Education'}
-            backgroundColor={theme.palette.primary.main}
-            color={theme.palette.cream.main}
-          >
-            <EducationContent />
-          </SectionLayout>
-
-          {/* Projects */}
-          <SectionLayout
-            sectionHeader={'Projects'}
-            backgroundColor={theme.palette.white.main}
-            color={theme.palette.primary.main}
-          >
-            <ProjectsContent />
-          </SectionLayout>
-
-          {/* Contact */}
-          <SectionLayout
-            sectionHeader={'Get In Touch'}
-            backgroundColor={theme.palette.secondary.main}
-            color={theme.palette.primary.main}
-          >
-            <Link href="mailto:name@email.com">Email</Link>
-          </SectionLayout>
+      <header id='top' >
+        <Box p={5} border={1}>
+          Welcome Header
         </Box>
+      </header>
 
-        <PageFooter />
+      {/* Main Content of Page */}
+      <Box id='content' style={{ flex: 1 }}>
+        {/* About */}
+        <SectionLayout
+          sectionHeader={'Welcome to My Resume'}
+          backgroundColor={theme.palette.white.main}
+          color={theme.palette.primary.main}
+        >
+          <AboutContent />
+        </SectionLayout>
+
+        {/* Skills */}
+        <SectionLayout
+          sectionHeader={'Tech Skills'}
+          backgroundColor={theme.palette.primary.main}
+          color={theme.palette.cream.main}
+        >
+          <TechContent />
+        </SectionLayout>
+
+        { console.log(theme.palette) }
+
+        {/* Experience */}
+        <SectionLayout
+          sectionHeader={'Experience'}
+          backgroundColor={theme.palette.white.main}
+          color={theme.palette.primary.main}
+        >
+          <ExperienceContent />
+        </SectionLayout>
+
+        {/* Education */}
+        <SectionLayout
+          sectionHeader={'Education'}
+          backgroundColor={theme.palette.primary.main}
+          color={theme.palette.cream.main}
+        >
+          <EducationContent />
+        </SectionLayout>
+
+        {/* Projects */}
+        <SectionLayout
+          sectionHeader={'Projects'}
+          backgroundColor={theme.palette.white.main}
+          color={theme.palette.primary.main}
+        >
+          <ProjectsContent />
+        </SectionLayout>
+
+        {/* Contact */}
+        <SectionLayout
+          sectionHeader={'Get In Touch'}
+          backgroundColor={theme.palette.secondary.main}
+          color={theme.palette.primary.main}
+        >
+          <Link href="mailto:name@email.com">Email</Link>
+        </SectionLayout>
       </Box>
-    </ThemeProvider>
+
+      <PageFooter />
+    </Box>
   )
 }
 
