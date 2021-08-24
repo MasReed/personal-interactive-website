@@ -5,11 +5,54 @@
     "titles": [
       {
         "title": "An introduction to modern web application development with Javascript",
-        "description": "Single page applications with ReactJS that use REST APIs built with Node.js. This covered testing, configuration and environment management, and the use of MongoDB for storing the application’s data. The course content is the same as in the Full stack course held at the Department of Computer Science at the University of Helsinki in Spring 2020."
+        "description": "Single page applications with ReactJS that use REST APIs built with Node.js. This covered testing, configuration and environment management, and the use of MongoDB for storing the application’s data. The course content is the same as in the Full stack course held at the Department of Computer Science at the University of Helsinki in Spring 2020.",
+        "link": {
+          "href": "https://fullstackopen.com/en/about/",
+          "text": "FullStackOpen"
+        }
       }
     ]
   },
   {
-
+    "institute": "Udemy",
+    "dates": "Jan 2021 - March 2021",
+    "titles": [
+      {
+        "title": "The Complete 2021 Web Development Bootcamp",
+        "description": "HTML5, CSS3, Bootstrap4, JavaScript, jQuery",
+        "link": {
+          "href": "https://www.udemy.com/course/the-complete-web-development-bootcamp/",
+          "text": "Udemy Course"
+        }
+      }
+    ]
+  },
+  {
+    "institute": "DataQuest",
+    "dates": "Oct 2020 - Dec 2020",
+    "titles": [
+      {
+        "title": "Data Analyst in Python",
+        "description": "Python, pandas, SQL",
+        "link": {
+          "href": "https://www.dataquest.io/path/data-analyst/",
+          "text": "Data Analyst Path"
+        }
+      }
+    ]
+  },
+  {
+    "institute": "University of Iowa",
+    "dates": "Aug 2013 - May 2018",
+    "titles": [
+      {
+        "title": "Bachelors of Science - Astronomy; Physics",
+        "description": "Python, numpy, matplotlib, astropy, HTML, CSS",
+        "link": {
+          "href": "https://physics.uiowa.edu/undergraduate/bs-astronomy",
+          "text": "Dept. of Physics and Astronomy"
+        }
+      }
+    ]
   }
 ]
