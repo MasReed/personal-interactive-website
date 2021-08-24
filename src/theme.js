@@ -30,11 +30,14 @@ const theme = createTheme({
       main: '#EBF2FF'
     }
   },
-  status: {
-    danger: '#FF0000'
-  },
-  text: {
-    purple: '#514e62'
+  typography: {
+    fontFamily: [
+      '"Roboto Slab", serif',
+      'Roboto',
+      'Helvetica',
+      'Arial',
+      'sans-serif'
+    ].join(',')
   }
 })
 

@@ -2,10 +2,10 @@ import React from 'react'
 
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
+import Typography from '@material-ui/core/Typography'
 
 export default function SectionLayout({ children, sectionHeader, ...props }) {
   const headingStyle = {
-    fontFamily: '"Roboto Slab", serif',
     fontSize: '3.175rem',
     fontWeight: 'normal',
     letterSpacing: '1px',
@@ -30,7 +30,9 @@ export default function SectionLayout({ children, sectionHeader, ...props }) {
   return (
     <Box style={sectionStyle}>
       <Container>
-        <h2 style={headingStyle}>{sectionHeader}</h2>
+        <Typography variant={'h3'} style={headingStyle}>
+          {sectionHeader}
+        </Typography>
         <Box style={{ padding: '25px 0' }}>
           <hr style={hrStyle} />
         </Box>
