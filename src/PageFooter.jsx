@@ -17,12 +17,22 @@ export default function PageFooter () {
                 <p>Site Map</p>
               </Box>
               <Box pt={2}>
-                <Link href='www.monsed.com' color='inherit'>
+                <Link
+                  href='www.monsed.com'
+                  color='inherit'
+                  target='_blank'
+                  rel='noopener'
+                >
                   Home
                 </Link>
               </Box>
               <Box pt={2}>
-                <Link href='restaurant.monsed.com' color='inherit'>
+                <Link
+                  href='restaurant.monsed.com'
+                  color='inherit'
+                  target='_blank'
+                  rel='noopener'
+                >
                   Nodo-Manager
                 </Link>
               </Box>
@@ -59,7 +69,12 @@ export default function PageFooter () {
                 Whats with the name?
               </Box>
               <Box pt={2}>
-                <Link href='http://www.github.com/MasReed/personal-interactive-website' color='inherit'>
+                <Link
+                  href='http://www.github.com/MasReed/personal-interactive-website'
+                  color='inherit'
+                  target='_blank'
+                  rel='noopener'
+                >
                   Github
                 </Link>
               </Box>

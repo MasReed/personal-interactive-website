@@ -48,7 +48,13 @@ export default function AboutContent() {
               <p>Yes</p>
             </Box>
             <Box>
-              <Link href='http://www.linkedin.com/in/masreed'>LinkedIn</Link>
+              <Link
+                href='http://www.linkedin.com/in/masreed'
+                target='_blank'
+                rel='noopener'
+              >
+                LinkedIn
+              </Link>
             </Box>
           </Grid>
         </Grid>

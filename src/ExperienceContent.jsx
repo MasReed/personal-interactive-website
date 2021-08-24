@@ -49,7 +49,13 @@ export default function ExperienceContent() {
                 flow simulation and was written in Python along side undergraduate colleagues.
                 This research project incepted a love for programming, development, and teamwork.
               </h4>
-              <Link href='http://astro.physics.uiowa.edu/gravbox'>Gravbox</Link>
+              <Link
+                href='http://astro.physics.uiowa.edu/gravbox'
+                target='_blank'
+                rel='noopener'
+              >
+                Gravbox
+              </Link>
             </Box>
           </Grid>
         </Grid>

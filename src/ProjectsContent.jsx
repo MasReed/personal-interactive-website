@@ -15,7 +15,13 @@ export default function ProjectsContent() {
           <Grid item sm={4}>
             <h2>Restaurant Point of Sale</h2>
             <Box>
-              <Link href='http://restaurant.monsed.com'>Nodo-Manager</Link>
+              <Link
+                href='http://restaurant.monsed.com'
+                target='_blank'
+                rel='noopener'
+              >
+                Nodo-Manager
+              </Link>
             </Box>
             <Box>
               <p>
@@ -33,7 +39,13 @@ export default function ProjectsContent() {
           <Grid item sm={4}>
             <h2>AllSky</h2>
             <Box>
-              <Link href='https://github.com/MasReed/allsky_camera'>AllSky Repository</Link>
+              <Link
+                href='https://github.com/MasReed/allsky_camera'
+                target='_blank'
+                rel='noopener'
+              >
+                AllSky Repository
+              </Link>
             </Box>
             <p class="card-text text-gray">
                 A Python software pipeline for overlaying
@@ -47,7 +59,13 @@ export default function ProjectsContent() {
           <Grid item sm={4}>
             <h2>GravBox</h2>
             <Box>
-              <Link href='http://astro.physics.uiowa.edu/gravbox'>Gravbox</Link>
+              <Link
+                href='http://astro.physics.uiowa.edu/gravbox'
+                target='_blank'
+                rel='noopener'
+              >
+                Gravbox
+              </Link>
             </Box>
             <p>
               An interactive AR experience to better understand
