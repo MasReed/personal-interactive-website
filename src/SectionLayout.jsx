@@ -9,22 +9,28 @@ export default function SectionLayout({ children, sectionHeader, ...props }) {
     fontSize: '3.175rem',
     fontWeight: 'normal',
     letterSpacing: '1px',
-    margin: '20px 0',
+    margin: '0 0 2rem 0',
+    padding: '2rem 0',
     textAlign: 'center',
     lineHeight: 1.2,
     color: props.color,
   }
 
-  const hrStyle = {
+  const hrLineStyle = {
     border: 0,
     borderColor: '#49464D',
     borderTop: '1px solid rgba(0, 0, 0, 0.2)',
   }
 
+  const hrSpacingStyle = {
+    padding: '25px 0',
+    margin: '1rem 0'
+  }
+
   const sectionStyle = {
     backgroundColor: props.backgroundColor,
     margin: 0,
-    padding: '50px'
+    padding: '5rem 0'
   }
 
   return (
@@ -33,14 +39,14 @@ export default function SectionLayout({ children, sectionHeader, ...props }) {
         <Typography variant={'h3'} style={headingStyle}>
           {sectionHeader}
         </Typography>
-        <Box style={{ padding: '25px 0' }}>
-          <hr style={hrStyle} />
+        <Box style={hrSpacingStyle}>
+          <hr style={hrLineStyle} />
         </Box>
 
         {children}
 
-        <Box style={{ padding: '25px 0' }}>
-          <hr style={hrStyle} />
+        <Box style={hrSpacingStyle}>
+          <hr style={hrLineStyle} />
         </Box>
       </Container>
     </Box>

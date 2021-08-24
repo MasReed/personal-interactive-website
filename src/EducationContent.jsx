@@ -22,6 +22,9 @@ const useStyles = makeStyles({
   },
   eduDetails: {
     color: theme.palette.white.main
+  },
+  eduTile: {
+    padding: '1.25rem 0'
   }
 })
 
@@ -29,13 +32,11 @@ const useStyles = makeStyles({
 export default function EducationContent() {
   const classes = useStyles()
 
-  console.log(education)
-
   return (
     <Box>
       {
         education.map(entry => (
-          <Box style={{ margin: '20px', padding: '0' }}>
+          <Box className={classes.eduTile}>
             <Grid container spacing={0}>
               <Grid item sm={4}>
                 <Box>
