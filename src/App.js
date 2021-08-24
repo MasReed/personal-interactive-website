@@ -57,13 +57,13 @@ function App() {
 
         { console.log(theme.palette) }
 
-        {/* Experience */}
+        {/* Projects */}
         <SectionLayout
-          sectionHeader={'Experience'}
+          sectionHeader={'Projects'}
           backgroundColor={theme.palette.white.main}
           color={theme.palette.primary.main}
         >
-          <ExperienceContent />
+          <ProjectsContent />
         </SectionLayout>
 
         {/* Education */}
@@ -75,13 +75,13 @@ function App() {
           <EducationContent />
         </SectionLayout>
 
-        {/* Projects */}
+        {/* Experience */}
         <SectionLayout
-          sectionHeader={'Projects'}
+          sectionHeader={'Experience'}
           backgroundColor={theme.palette.white.main}
           color={theme.palette.primary.main}
         >
-          <ProjectsContent />
+          <ExperienceContent />
         </SectionLayout>
 
         {/* Contact */}

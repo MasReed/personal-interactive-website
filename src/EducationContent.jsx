@@ -12,7 +12,7 @@ import education from './content/education.json'
 
 const useStyles = makeStyles({
   dateText: {
-    color: theme.palette.cream.main
+    color: theme.palette.white.main
   },
   eduInstitute: {
     color: theme.palette.cream.main
@@ -24,7 +24,7 @@ const useStyles = makeStyles({
     color: theme.palette.white.main
   },
   eduTile: {
-    padding: '1.25rem 0'
+    padding: '1.25rem 1.75rem'
   }
 })
 
@@ -60,7 +60,7 @@ export default function EducationContent() {
                         {title.description}
                       </Typography>
                       <Link
-                        color='secondary'
+                        color='textPrimary'
                         href={title.link.href}
                         target='_blank'
                         rel='noopener'

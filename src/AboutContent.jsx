@@ -16,11 +16,11 @@ export default function AboutContent() {
             <h2>About Me</h2>
             <Box>
               <p>
-                I love finding solutions! I'm a self-taught, full stack
+                I love finding solutions! I am a full stack
                 developer and masterful problem solver. My background is
                 in astrophysics and I have experience in STEM education.
                 I have a passion to learn new things and share them with
-                others. I also enjoy multi-player, strategy
+                others. I also enjoy multiplayer strategy
                 games, such as Magic: the Gathering and Catan!
               </p>
             </Box>
