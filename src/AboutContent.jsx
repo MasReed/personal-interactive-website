@@ -3,10 +3,12 @@ import React from 'react'
 import Box from '@material-ui/core/Box'
 import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
+import IconButton from '@material-ui/core/IconButton'
 import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
-
 import { makeStyles } from '@material-ui/core/styles'
+import InstagramIcon from '@material-ui/icons/Instagram'
+import WhatshotIcon from '@material-ui/icons/Whatshot';
 
 import theme from './theme'
 
@@ -17,12 +19,19 @@ const useStyles = makeStyles({
   aboutTitle: {
     color: theme.palette.purple.main
   },
-  eduInstitute: {
-    color: theme.palette.cream.main
+  detailBox: {
+    margin: '0 0 .75rem 0'
   },
-  eduTitle: {
-    color: theme.palette.orange.main
-  }
+  detailSubtitles: {
+    fontSize: '1rem',
+    fontWeight: 700
+  },
+  detailText: {
+    marginTop: '0'
+  },
+  dividerMargins: {
+    margin: '2rem 0'
+  },
 })
 
 export default function AboutContent() {
@@ -34,11 +43,11 @@ export default function AboutContent() {
         {/* About Me Statement */}
         <Grid item sm={4}>
           <Box className={classes.aboutTile}>
-            <Box mb={'2rem'}>
+            <Box>
               <Typography color='primary' variant='h4'>About Me</Typography>
             </Box>
-            <Divider />
-            <Box mt={'2rem'}>
+            <Divider className={classes.dividerMargins} />
+            <Box>
               <Typography color='primary' variant='body1'>
                 I love finding solutions! I am a full stack
                 developer and masterful problem solver. My background is
@@ -63,19 +72,61 @@ export default function AboutContent() {
         <Grid item sm={4}>
           <Box className={classes.aboutTile}>
             <Typography color='primary' variant='h4'>Details</Typography>
-            <Box>
-              <Typography>Name:</Typography>
-              <Typography variant='p'>Mason Reed</Typography>
+            <Divider className={classes.dividerMargins} />
+
+            {/* Name */}
+            <Box className={classes.detailBox}>
+              <Typography
+                color='primary'
+                variant='subtitle1'
+                className={classes.detailSubtitles}
+              >
+                Name:
+              </Typography>
+              <Typography
+                variant='body1'
+                className={classes.detailText}
+              >
+                Mason Reed
+              </Typography>
             </Box>
-            <Box>
-              <Typography>Location:</Typography>
-              <Typography variant='p'>Milwaukee, WI - USA</Typography>
+
+            {/* Location */}
+            <Box className={classes.detailBox}>
+              <Typography
+                color='primary'
+                variant='subtitle1'
+                className={classes.detailSubtitles}
+              >
+                Location:
+              </Typography>
+              <Typography
+                variant='body1'
+                className={classes.detailText}
+              >
+                Milwaukee, WI - USA
+              </Typography>
             </Box>
-            <Box>
-              <Typography>Pets</Typography>
-              <Typography variant='p'>Yes</Typography>
+
+            {/* Pets */}
+            <Box className={classes.detailBox}>
+              <Typography
+                color='primary'
+                variant='subtitle1'
+                className={classes.detailSubtitles}
+              >
+                Pets
+              </Typography>
+              <Typography
+                variant='body1'
+                className={classes.detailText}
+              >
+                Yes
+              </Typography>
             </Box>
-            <Box>
+
+            {/* Link */}
+            <Box className={classes.detailBox}>
               <Link
                 href='http://www.linkedin.com/in/masreed'
                 target='_blank'
@@ -83,6 +134,50 @@ export default function AboutContent() {
               >
                 LinkedIn
               </Link>
+            </Box>
+          </Box>
+
+          <Box className={classes.aboutTile}>
+            <Typography
+              color='primary'
+              variant='subtitle2'
+            >
+              Want to know more?
+            </Typography>
+
+            <Box display='flex' flexDirection='column' justifyContent='center' alignItems='flex-start'>
+              {/* Hobbies Link */}
+              <IconButton
+                disabled
+                aria-label='monsed.com/hobbies'
+                onClick={() => window.open('http://monsed.com/hobbies', '_blank')}
+              >
+                <WhatshotIcon />
+                <Box px={1}>
+                  <Typography
+                    color='primary'
+                    variant='overline'
+                  >
+                    Hobbies
+                  </Typography>
+                </Box>
+              </IconButton>
+
+              {/* Instagram Link */}
+              <IconButton
+                aria-label='Instagram.com'
+                onClick={() => window.open('http://instagram.com', '_blank', 'rel="noopener"')}
+              >
+                <InstagramIcon />
+                <Box px={1}>
+                  <Typography
+                    color='primary'
+                    variant='overline'
+                  >
+                    Instagram
+                  </Typography>
+                </Box>
+              </IconButton>
             </Box>
           </Box>
         </Grid>
