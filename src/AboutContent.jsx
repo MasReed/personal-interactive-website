@@ -33,6 +33,14 @@ const useStyles = makeStyles({
   dividerMargins: {
     margin: '2rem 0'
   },
+  linkBox: {
+    color: 'primary',
+    '&:hover': {
+      color: theme.palette.orange.main,
+      letterSpacing: '0.1rem',
+      textDecoration: 'none'
+    }
+  },
 })
 
 export default function AboutContent() {
@@ -65,38 +73,30 @@ export default function AboutContent() {
             >
               {/* LinkedIn Link */}
               <Link
+                className={classes.linkBox}
                 href='http://linkedin.com/in/masreed'
                 target='_blank'
                 rel='noopener'
               >
                 <Box display='flex' direction='row' alignItems='center'>
-                  <LinkedInIcon color='primary' fontSize='large' />
+                  <LinkedInIcon fontSize='large' />
                   <Box px={1}>
-                    <Typography
-                      color='primary'
-                      variant='overline'
-                    >
-                      LinkedIn
-                    </Typography>
+                    <Typography variant='overline'>LinkedIn</Typography>
                   </Box>
                 </Box>
               </Link>
 
               {/* Github Link */}
               <Link
+                className={classes.linkBox}
                 href='http://github.com/masreed'
                 target='_blank'
                 rel='noopener'
               >
                 <Box display='flex' direction='row' alignItems='center'>
-                  <GitHubIcon color='primary' fontSize='large' />
+                  <GitHubIcon fontSize='large' />
                   <Box px={1}>
-                    <Typography
-                      color='primary'
-                      variant='overline'
-                    >
-                      GitHub
-                    </Typography>
+                    <Typography variant='overline'>GitHub</Typography>
                   </Box>
                 </Box>
               </Link>
@@ -180,6 +180,8 @@ export default function AboutContent() {
               {/* Hobbies Link */}
               <Link
                 style={{ pointerEvents: 'none' }}
+
+                className={classes.linkBox}
                 href='http://monsed.com/hobbies'
                 target='_blank'
                 rel='noopener'
@@ -187,31 +189,22 @@ export default function AboutContent() {
                 <Box display='flex' direction='row' alignItems='center'>
                   <WhatshotIcon color='secondary' fontSize='large' />
                   <Box px={1}>
-                    <Typography
-                      color='primary'
-                      variant='overline'
-                    >
-                      Hobbies
-                    </Typography>
+                    <Typography variant='overline'>Hobbies</Typography>
                   </Box>
                 </Box>
               </Link>
 
               {/* Instagram Link */}
               <Link
+                className={classes.linkBox}
                 href='http://instagram.com/leta_thelovablehusky'
                 target='_blank'
                 rel='noopener'
               >
                 <Box display='flex' direction='row' alignItems='center'>
-                  <InstagramIcon color='primary' fontSize='large' />
+                  <InstagramIcon fontSize='large' />
                   <Box px={1}>
-                    <Typography
-                      color='primary'
-                      variant='overline'
-                    >
-                      Instagram
-                    </Typography>
+                    <Typography variant='overline'>Instagram</Typography>
                   </Box>
                 </Box>
               </Link>
