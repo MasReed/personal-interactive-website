@@ -21,9 +21,9 @@ export default function TechContent() {
     ],
     technologies: [
       'Git & Github',
+      'React Framework',
       'Bootstrap Framework',
       'Material-ui Framework',
-      'jQuery',
       'Heroku'
     ],
     utilities: [
