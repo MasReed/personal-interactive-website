@@ -27,7 +27,7 @@ export default function ProjectsContent() {
 
               <CardMedia
                 image='./images/nodoScreenshot.jpg'
-                title='Project title'
+                title='Nodo Manager'
                 style={{height: 0, paddingTop: '56.25%'}}
               />
 
@@ -62,12 +62,12 @@ export default function ProjectsContent() {
             <Card variant='outlined'>
               <CardHeader
                 title='Iteractive CV'
-                subheader='My Personal Websites'
+                subheader='My Personal Website'
               />
 
               <CardMedia
                 image='./images/website.jpg'
-                title='this website'
+                title='The current website'
                 style={{height: 0, paddingTop: '56.25%'}}
               />
 
@@ -90,6 +90,38 @@ export default function ProjectsContent() {
             </Card>
           </Grid>
 
+          {/* DataQuest Projects */}
+          <Grid item sm={4}>
+            <Card variant='outlined'>
+              <CardHeader
+                title='DataQuest Projects'
+                subheader='Data Analysis in Python'
+              />
+
+              <CardMedia
+                image='./images/dataquest.jpg'
+                title='Data Analysis'
+                style={{height: 0, paddingTop: '56.25%'}}
+              />
+
+              <CardContent>
+                <Typography variant='body2'>
+                  Various data science projects from DataQuest's Data Analyst Path. Over 15 individual data analyses all within Python, documented with iPythonNotebook.
+                </Typography>
+              </CardContent>
+
+              <CardActions>
+                <Link
+                  href='https://github.com/MasReed/DataQuestProjects'
+                  target='_blank'
+                  rel='noopener'
+                >
+                  Github Repository
+                </Link>
+              </CardActions>
+            </Card>
+          </Grid>
+
           {/* AllSky */}
           <Grid item sm={4}>
             <Card variant='outlined'>
@@ -100,7 +132,7 @@ export default function ProjectsContent() {
 
               <CardMedia
                 image='./images/allsky.png'
-                title='Project title'
+                title='AllSky Star Mapping'
                 style={{height: 0, paddingTop: '56.25%'}}
               />
 
