@@ -26,7 +26,7 @@ export default function ProjectsContent() {
               />
 
               <CardMedia
-                image='./images/website.png'
+                image='./images/nodoScreenshot.jpg'
                 title='Project title'
                 style={{height: 0, paddingTop: '56.25%'}}
               />
@@ -48,6 +48,39 @@ export default function ProjectsContent() {
 
                 <Link
                   href='https://github.com/MasReed/Nodo-Manager'
+                  target='_blank'
+                  rel='noopener'
+                >
+                  Github Repository
+                </Link>
+              </CardActions>
+            </Card>
+          </Grid>
+
+          {/* Personal Website */}
+          <Grid item sm={4}>
+            <Card variant='outlined'>
+              <CardHeader
+                title='Iteractive CV'
+                subheader='My Personal Websites'
+              />
+
+              <CardMedia
+                image='./images/website.jpg'
+                title='this website'
+                style={{height: 0, paddingTop: '56.25%'}}
+              />
+
+              <CardContent>
+                <Typography variant='body2'>
+                  My curriculum vitae... on the web! Built with React and Material-ui, hosted on GitHub Pages.
+                  You're here now!
+                </Typography>
+              </CardContent>
+
+              <CardActions>
+                <Link
+                  href='https://github.com/MasReed/personal-interactive-website'
                   target='_blank'
                   rel='noopener'
                 >
