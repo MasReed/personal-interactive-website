@@ -1,14 +1,17 @@
 import React from 'react'
 
 import Box from '@material-ui/core/Box'
+import Button from '@material-ui/core/Button'
 import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
 import IconButton from '@material-ui/core/IconButton'
 import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
+import GitHubIcon from '@material-ui/icons/GitHub';
 import InstagramIcon from '@material-ui/icons/Instagram'
-import WhatshotIcon from '@material-ui/icons/Whatshot';
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import WhatshotIcon from '@material-ui/icons/Whatshot'
 
 import theme from './theme'
 
@@ -40,14 +43,12 @@ export default function AboutContent() {
   return (
     <Box id='#about' display='flex'>
       <Grid container spacing={0}>
-        {/* About Me Statement */}
+        {/* About Me */}
         <Grid item sm={4}>
-          <Box className={classes.aboutTile}>
-            <Box>
+          <Box display='flex' flexDirection='column' height='100%' justifyContent='space-between'>
+            <Box className={classes.aboutTile}>
               <Typography color='primary' variant='h4'>About Me</Typography>
-            </Box>
-            <Divider className={classes.dividerMargins} />
-            <Box>
+              <Divider className={classes.dividerMargins} />
               <Typography color='primary' variant='body1'>
                 I love finding solutions! I am a full stack
                 developer and masterful problem solver. My background is
@@ -56,6 +57,51 @@ export default function AboutContent() {
                 others. I also enjoy multiplayer strategy
                 games, such as Magic: the Gathering and Catan!
               </Typography>
+            </Box>
+
+            <Box
+              className={classes.aboutTile}
+              display='flex'
+              flexDirection='row'
+              justifyContent='space-around'
+            >
+              {/* LinkedIn Link */}
+              <Link
+                href='http://linkedin.com/in/masreed'
+                target='_blank'
+                rel='noopener'
+              >
+                <Box display='flex' direction='row' alignItems='center'>
+                  <LinkedInIcon color='primary' fontSize='large' />
+                  <Box px={1}>
+                    <Typography
+                      color='primary'
+                      variant='overline'
+                    >
+                      LinkedIn
+                    </Typography>
+                  </Box>
+                </Box>
+              </Link>
+
+              {/* Github Link */}
+              <Link
+                href='http://github.com/masreed'
+                target='_blank'
+                rel='noopener'
+              >
+                <Box display='flex' direction='row' alignItems='center'>
+                  <GitHubIcon color='primary' fontSize='large' />
+                  <Box px={1}>
+                    <Typography
+                      color='primary'
+                      variant='overline'
+                    >
+                      GitHub
+                    </Typography>
+                  </Box>
+                </Box>
+              </Link>
             </Box>
           </Box>
         </Grid>
@@ -70,114 +116,108 @@ export default function AboutContent() {
 
         {/* About Me Facts */}
         <Grid item sm={4}>
-          <Box className={classes.aboutTile}>
-            <Typography color='primary' variant='h4'>Details</Typography>
-            <Divider className={classes.dividerMargins} />
+          <Box display='flex' flexDirection='column' height='100%' justifyContent='space-between'>
+            <Box className={classes.aboutTile}>
+              <Typography color='primary' variant='h4'>Details</Typography>
+              <Divider className={classes.dividerMargins} />
 
-            {/* Name */}
-            <Box className={classes.detailBox}>
-              <Typography
-                color='primary'
-                variant='subtitle1'
-                className={classes.detailSubtitles}
-              >
-                Name:
-              </Typography>
-              <Typography
-                variant='body1'
-                className={classes.detailText}
-              >
-                Mason Reed
-              </Typography>
+              {/* Name */}
+              <Box className={classes.detailBox}>
+                <Typography
+                  color='primary'
+                  variant='subtitle1'
+                  className={classes.detailSubtitles}
+                >
+                  Name:
+                </Typography>
+                <Typography
+                  variant='body1'
+                  className={classes.detailText}
+                >
+                  Mason Reed
+                </Typography>
+              </Box>
+
+              {/* Location */}
+              <Box className={classes.detailBox}>
+                <Typography
+                  color='primary'
+                  variant='subtitle1'
+                  className={classes.detailSubtitles}
+                >
+                  Location:
+                </Typography>
+                <Typography
+                  variant='body1'
+                  className={classes.detailText}
+                >
+                  Milwaukee, WI - USA
+                </Typography>
+              </Box>
+
+              {/* Pets */}
+              <Box className={classes.detailBox}>
+                <Typography
+                  color='primary'
+                  variant='subtitle1'
+                  className={classes.detailSubtitles}
+                >
+                  Pets
+                </Typography>
+                <Typography
+                  variant='body1'
+                  className={classes.detailText}
+                >
+                  Yes
+                </Typography>
+              </Box>
             </Box>
 
-            {/* Location */}
-            <Box className={classes.detailBox}>
-              <Typography
-                color='primary'
-                variant='subtitle1'
-                className={classes.detailSubtitles}
-              >
-                Location:
-              </Typography>
-              <Typography
-                variant='body1'
-                className={classes.detailText}
-              >
-                Milwaukee, WI - USA
-              </Typography>
-            </Box>
-
-            {/* Pets */}
-            <Box className={classes.detailBox}>
-              <Typography
-                color='primary'
-                variant='subtitle1'
-                className={classes.detailSubtitles}
-              >
-                Pets
-              </Typography>
-              <Typography
-                variant='body1'
-                className={classes.detailText}
-              >
-                Yes
-              </Typography>
-            </Box>
-
-            {/* Link */}
-            <Box className={classes.detailBox}>
+            <Box
+              className={classes.aboutTile}
+              display='flex'
+              flexDirection='row'
+              justifyContent='space-around'
+              alignItems='flex-start'
+            >
+              {/* Hobbies Link */}
               <Link
-                href='http://www.linkedin.com/in/masreed'
+                style={{ pointerEvents: 'none' }}
+                href='http://monsed.com/hobbies'
                 target='_blank'
                 rel='noopener'
               >
-                LinkedIn
-              </Link>
-            </Box>
-          </Box>
-
-          <Box className={classes.aboutTile}>
-            <Typography
-              color='primary'
-              variant='subtitle2'
-            >
-              Want to know more?
-            </Typography>
-
-            <Box display='flex' flexDirection='column' justifyContent='center' alignItems='flex-start'>
-              {/* Hobbies Link */}
-              <IconButton
-                disabled
-                aria-label='monsed.com/hobbies'
-                onClick={() => window.open('http://monsed.com/hobbies', '_blank')}
-              >
-                <WhatshotIcon />
-                <Box px={1}>
-                  <Typography
-                    color='primary'
-                    variant='overline'
-                  >
-                    Hobbies
-                  </Typography>
+                <Box display='flex' direction='row' alignItems='center'>
+                  <WhatshotIcon color='secondary' fontSize='large' />
+                  <Box px={1}>
+                    <Typography
+                      color='primary'
+                      variant='overline'
+                    >
+                      Hobbies
+                    </Typography>
+                  </Box>
                 </Box>
-              </IconButton>
+              </Link>
 
               {/* Instagram Link */}
-              <IconButton
-                aria-label='Instagram.com'
-                onClick={() => window.open('http://instagram.com', '_blank', 'rel="noopener"')}
+              <Link
+                href='http://instagram.com/leta_thelovablehusky'
+                target='_blank'
+                rel='noopener'
               >
-                <InstagramIcon />
-                <Box px={1}>
-                  <Typography
-                    color='primary'
-                    variant='overline'
-                  >
-                    Instagram
-                  </Typography>
+                <Box display='flex' direction='row' alignItems='center'>
+                  <LinkedInIcon color='primary' fontSize='large' />
+                  <Box px={1}>
+                    <Typography
+                      color='primary'
+                      variant='overline'
+                    >
+                      Instagram
+                    </Typography>
+                  </Box>
                 </Box>
-              </IconButton>
+              </Link>
             </Box>
           </Box>
         </Grid>
