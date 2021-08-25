@@ -11,24 +11,55 @@ import Grid from '@material-ui/core/Grid'
 import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
 
+import { makeStyles } from '@material-ui/core/styles'
+import theme from './theme'
+
+const useStyles = makeStyles({
+  cardTheme: {
+    backgroundColor: theme.palette.cream.main,
+    color: 'primary'
+  },
+  cardImage: {
+    height: 0,
+    paddingTop: '56.25%'
+  },
+  cardLink: {
+    color: 'primary',
+    '&:hover': {
+      color: theme.palette.orange.main,
+      fontWeight: 'bold',
+      letterSpacing: '0.085rem',
+      textDecoration: 'none'
+    }
+  },
+  cardActionBox: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    margin: '0 .5rem .25rem',
+    width: '100%'
+  }
+})
+
 
 export default function ProjectsContent() {
+  const classes = useStyles()
+
   return (
     <Box id='#about' m={0} p={0} >
       <Container>
         <Grid container spacing={3}>
           {/* Restaurant PoS */}
-          <Grid item sm={4}>
-            <Card variant='outlined'>
+          <Grid item xs={12} sm={4}>
+            <Card className={classes.cardTheme} variant='outlined'>
               <CardHeader
                 title='Nodo Manager'
                 subheader='Restaurant Point of Sale'
               />
 
               <CardMedia
+                className={classes.cardImage}
                 image='./images/nodoScreenshot.jpg'
                 title='Nodo Manager'
-                style={{height: 0, paddingTop: '56.25%'}}
               />
 
               <CardContent>
@@ -38,37 +69,41 @@ export default function ProjectsContent() {
               </CardContent>
 
               <CardActions>
-                <Link
-                  href='http://restaurant.monsed.com'
-                  target='_blank'
-                  rel='noopener'
-                >
-                  Heroku
-                </Link>
+                <Box className={classes.cardActionBox}>
+                  <Link
+                    className={classes.cardLink}
+                    href='http://restaurant.monsed.com'
+                    target='_blank'
+                    rel='noopener'
+                  >
+                    Heroku
+                  </Link>
 
-                <Link
-                  href='https://github.com/MasReed/Nodo-Manager'
-                  target='_blank'
-                  rel='noopener'
-                >
-                  Github Repository
-                </Link>
+                  <Link
+                    className={classes.cardLink}
+                    href='https://github.com/MasReed/Nodo-Manager'
+                    target='_blank'
+                    rel='noopener'
+                  >
+                    Github Repository
+                  </Link>
+                </Box>
               </CardActions>
             </Card>
           </Grid>
 
           {/* Personal Website */}
-          <Grid item sm={4}>
-            <Card variant='outlined'>
+          <Grid item xs={12} sm={4}>
+            <Card className={classes.cardTheme} variant='outlined'>
               <CardHeader
                 title='Iteractive CV'
                 subheader='My Personal Website'
               />
 
               <CardMedia
+                className={classes.cardImage}
                 image='./images/website.jpg'
                 title='The current website'
-                style={{height: 0, paddingTop: '56.25%'}}
               />
 
               <CardContent>
@@ -79,29 +114,32 @@ export default function ProjectsContent() {
               </CardContent>
 
               <CardActions>
-                <Link
-                  href='https://github.com/MasReed/personal-interactive-website'
-                  target='_blank'
-                  rel='noopener'
-                >
-                  Github Repository
-                </Link>
+                <Box className={classes.cardActionBox}>
+                  <Link
+                    className={classes.cardLink}
+                    href='https://github.com/MasReed/personal-interactive-website'
+                    target='_blank'
+                    rel='noopener'
+                  >
+                    Github Repository
+                  </Link>
+                </Box>
               </CardActions>
             </Card>
           </Grid>
 
           {/* DataQuest Projects */}
-          <Grid item sm={4}>
-            <Card variant='outlined'>
+          <Grid item xs={12} sm={4}>
+            <Card className={classes.cardTheme} variant='outlined'>
               <CardHeader
                 title='DataQuest Projects'
                 subheader='Data Analysis in Python'
               />
 
               <CardMedia
+                className={classes.cardImage}
                 image='./images/dataquest.jpg'
                 title='Data Analysis'
-                style={{height: 0, paddingTop: '56.25%'}}
               />
 
               <CardContent>
@@ -111,29 +149,32 @@ export default function ProjectsContent() {
               </CardContent>
 
               <CardActions>
-                <Link
-                  href='https://github.com/MasReed/DataQuestProjects'
-                  target='_blank'
-                  rel='noopener'
-                >
-                  Github Repository
-                </Link>
+                <Box className={classes.cardActionBox}>
+                  <Link
+                    className={classes.cardLink}
+                    href='https://github.com/MasReed/DataQuestProjects'
+                    target='_blank'
+                    rel='noopener'
+                  >
+                    Github Repository
+                  </Link>
+                </Box>
               </CardActions>
             </Card>
           </Grid>
 
           {/* AllSky */}
-          <Grid item sm={4}>
-            <Card variant='outlined'>
+          <Grid item xs={12} sm={4}>
+            <Card className={classes.cardTheme} variant='outlined'>
               <CardHeader
                 title='AllSky'
                 subheader='Astronomical Imaging Pipeline'
               />
 
               <CardMedia
+                className={classes.cardImage}
                 image='./images/allsky.png'
                 title='AllSky Star Mapping'
-                style={{height: 0, paddingTop: '56.25%'}}
               />
 
               <CardContent>
@@ -145,29 +186,32 @@ export default function ProjectsContent() {
               </CardContent>
 
               <CardActions>
-                <Link
-                  href='https://github.com/MasReed/allsky_camera'
-                  target='_blank'
-                  rel='noopener'
-                >
-                  Github Repository
-                </Link>
+                <Box className={classes.cardActionBox}>
+                  <Link
+                    className={classes.cardLink}
+                    href='https://github.com/MasReed/allsky_camera'
+                    target='_blank'
+                    rel='noopener'
+                  >
+                    Github Repository
+                  </Link>
+                </Box>
               </CardActions>
             </Card>
           </Grid>
 
           {/* Gravbox */}
-          <Grid item sm={4}>
-            <Card variant='outlined'>
+          <Grid item xs={12} sm={4}>
+            <Card className={classes.cardTheme} variant='outlined'>
               <CardHeader
                 title='GravBox'
                 subheader='Augmented Reality for Gravitaional Dynamics'
               />
 
               <CardMedia
+                className={classes.cardImage}
                 image='./images/Gravbox.png'
                 title='Gravbox'
-                style={{height: 0, paddingTop: '56.25%'}}
               />
 
               <CardContent>
@@ -181,21 +225,25 @@ export default function ProjectsContent() {
               </CardContent>
 
               <CardActions>
-                <Link
-                  href='http://astro.physics.uiowa.edu/gravbox'
-                  target='_blank'
-                  rel='noopener'
-                >
-                  Gravbox Website
-                </Link>
+                <Box className={classes.cardActionBox}>
+                  <Link
+                    className={classes.cardLink}
+                    href='http://astro.physics.uiowa.edu/gravbox'
+                    target='_blank'
+                    rel='noopener'
+                  >
+                    Website
+                  </Link>
 
-                <Link
-                  href='https://github.com/jwisbell/gravity_sandbox'
-                  target='_blank'
-                  rel='noopener'
-                >
-                  Github Repository
-                </Link>
+                  <Link
+                    className={classes.cardLink}
+                    href='https://github.com/jwisbell/gravity_sandbox'
+                    target='_blank'
+                    rel='noopener'
+                  >
+                    Github Repository
+                  </Link>
+                </Box>
               </CardActions>
             </Card>
           </Grid>
