@@ -10,6 +10,7 @@ import EducationContent from './EducationContent'
 import ExperienceContent from './ExperienceContent'
 import ProjectsContent from './ProjectsContent'
 import TechContent from './TechContent'
+import ContactForm from './ContactForm'
 import PageFooter from './PageFooter'
 import SectionLayout from './SectionLayout'
 
@@ -87,10 +88,10 @@ function App() {
         {/* Contact */}
         <SectionLayout
           sectionHeader={'Get In Touch'}
-          backgroundColor={theme.palette.secondary.main}
-          color={theme.palette.primary.main}
+          backgroundColor={theme.palette.primary.main}
+          color={theme.palette.cream.main}
         >
-          <Link href="mailto:name@email.com">Email</Link>
+          <ContactForm />
         </SectionLayout>
       </Box>
 
