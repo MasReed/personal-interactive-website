@@ -6,12 +6,12 @@ import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
+import Icon from '@material-ui/core/Icon'
 import Link from '@material-ui/core/Link'
 import Snackbar from '@material-ui/core/Snackbar'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 
-import Icon from '@material-ui/core/Icon'
 import { makeStyles } from '@material-ui/core/styles'
 import theme from './theme'
 
@@ -47,19 +47,22 @@ export default function ContactForm() {
     setForm({ ...form, [event.target.name]: event.target.value})
   }
 
-  const submitForm = (event) => {
+  const submitForm = async (event) => {
     event.preventDefault()
-    console.log(event)
 
-    handleSubmit(event)
+    await handleSubmit(event)
 
-    // if (state.succeeded) {
-    //   setToastState({ ...toastState, open: true })
-    // }
+    if (state.succeeded) {
+      setToastState({ ...toastState, open: true })
+    }
+
+    setForm({
+      name: '',
+      email: '',
+      phone: '',
+      message: ''
+    })
   }
-
-  // const formRef = document.getElementById('contactForm')
-  // formRef.onsubmit = submitForm
 
   return (
     <Container className={classes.formContainer}>
