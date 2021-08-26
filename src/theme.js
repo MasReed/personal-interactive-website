@@ -24,7 +24,7 @@ const theme = createTheme({
       main: '#282638'
     },
     orange: {
-      main: '#EA5E42'
+      main: '#ff8f6e'
     },
     cream: {
       main: '#f5cdaa'
