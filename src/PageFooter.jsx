@@ -5,10 +5,12 @@ import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Link from '@material-ui/core/Link'
 
+import theme from './theme'
+
 export default function PageFooter () {
   return (
     <footer>
-      <Box m={0} py={5} bgcolor='#f5cdaa'>
+      <Box m={0} py={5} style={{ backgroundColor: theme.palette.orange.main }}>
         <Container>
           <Grid container spacing={5}>
             {/* Site Map */}

@@ -1,6 +1,5 @@
 import AppBar from '@material-ui/core/AppBar'
 import Box from '@material-ui/core/Box'
-import Link from '@material-ui/core/Link'
 import Tab from '@material-ui/core/Tab'
 import Tabs from '@material-ui/core/Tabs'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -88,8 +87,8 @@ function App() {
         {/* Contact */}
         <SectionLayout
           sectionHeader={'Get In Touch'}
-          backgroundColor={theme.palette.primary.main}
-          color={theme.palette.cream.main}
+          backgroundColor={theme.palette.cream.main}
+          color={theme.palette.purple.main}
         >
           <ContactForm />
         </SectionLayout>
