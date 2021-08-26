@@ -23,9 +23,13 @@ const useStyles = makeStyles({
     margin: '0 0 1.25rem 0',
     padding: '0'
   },
-  submitButton: {
+  submitSection: {
     margin: '1.25rem 1rem 0'
   },
+  submitButton: {
+    color: theme.palette.primary.main,
+    backgroundColor: theme.palette.orange.main
+  }
 })
 
 export default function ContactForm() {
@@ -156,7 +160,7 @@ export default function ContactForm() {
           </Grid>
 
           <Grid item xs={12}>
-            <Box display='flex' justifyContent='space-between' className={classes.submitButton}>
+            <Box display='flex' justifyContent='space-between' className={classes.submitSection}>
 
               <Box display='flex' flexDirection='column'>
                 <Typography alignself='flex-start' variant='caption'>Alternatively, send an email to:</Typography>
@@ -167,7 +171,7 @@ export default function ContactForm() {
 
               <Box>
                 <Button
-                  color='secondary'
+                  className={classes.submitButton}
                   disabled={state.submitting}
                   endIcon={<Icon>send</Icon>}
                   form='contactForm'

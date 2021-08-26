@@ -15,22 +15,25 @@ const useStyles = makeStyles({
   dateText: {
     color: theme.palette.white.main
   },
-  eduInstitute: {
-    color: theme.palette.cream.main
-  },
-  eduTitle: {
-    color: theme.palette.orange.main
+  dividerStyle: {
+    backgroundColor: theme.palette.orange.main,
+    opacity: '50%'
   },
   eduDetails: {
     color: theme.palette.white.main
   },
+  eduInstitute: {
+    color: theme.palette.cream.main
+  },
+  eduLink: {
+    color: theme.palette.cream.main
+  },
   eduTile: {
     padding: '1.25rem 1.75rem'
   },
-  dividerStyle: {
-    backgroundColor: theme.palette.orange.main,
-    opacity: '50%'
-  }
+  eduTitle: {
+    color: theme.palette.orange.main
+  },
 })
 
 
@@ -69,7 +72,7 @@ export default function EducationContent() {
                       {title.description}
                     </Typography>
                     <Link
-                      color='textPrimary'
+                      className={classes.eduLink}
                       href={title.link.href}
                       target='_blank'
                       rel='noopener'

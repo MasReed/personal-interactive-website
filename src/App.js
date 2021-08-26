@@ -54,7 +54,7 @@ function App() {
         >
           <TechContent />
         </SectionLayout>
-        
+
         {/* Projects */}
         <SectionLayout
           sectionHeader={'Projects'}
@@ -86,7 +86,7 @@ function App() {
         <SectionLayout
           sectionHeader={'Get In Touch'}
           backgroundColor={theme.palette.cream.main}
-          color={theme.palette.purple.main}
+          color={theme.palette.primary.main}
         >
           <ContactForm />
         </SectionLayout>
