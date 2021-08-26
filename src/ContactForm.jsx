@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from '@formspree/react'
+
+import Alert from '@material-ui/lab/Alert'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Link from '@material-ui/core/Link'
+import Snackbar from '@material-ui/core/Snackbar'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 
@@ -28,14 +31,38 @@ const useStyles = makeStyles({
 export default function ContactForm() {
   const classes = useStyles()
   const [state, handleSubmit] = useForm('xzbykngb')
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  })
+  const [toastState, setToastState] = useState({
+    open: false,
+    vertical: 'bottom',
+    horizontal: 'right'
+  })
 
-  if (state.succeeded) {
-    return <div>Thank you for signing up!</div>
+  // if (state.succeeded) {
+  //   setToastState({ ...toastState, open: true })
+  // }
+
+  const handleChange = (event) => {
+    setForm({ ...form, [event.target.name]: event.target.value})
   }
 
   return (
     <Container className={classes.formContainer}>
-      <form onSubmit={handleSubmit} noValidate autoComplete='off'>
+      <Snackbar
+        anchorOrigin={{ vertical: toastState.vertical, horizontal: toastState.horizontal }}
+        autoHideDuration={5000}
+        onClose={() => setToastState({ ...toastState, open: false })}
+        open={toastState.open}
+      >
+        <Alert severity='success' color='info'>Thank you reaching out!</Alert>
+      </Snackbar>
+
+      <form id='contactForm' onSubmit={handleSubmit}>
         <Grid
           container
           direction='row'
@@ -48,8 +75,11 @@ export default function ContactForm() {
               color='secondary'
               fullWidth
               label='Name'
+              name='name'
+              onChange={handleChange}
               placeholder='Jane Doe'
               size='small'
+              value={form.name}
               variant='outlined'
             />
           </Grid>
@@ -61,8 +91,11 @@ export default function ContactForm() {
                 color='secondary'
                 fullWidth
                 label='Email'
+                name='email'
+                onChange={handleChange}
                 placeholder='jane@doe.com'
                 size='small'
+                value={form.email}
                 variant='outlined'
               />
             </Grid>
@@ -83,8 +116,11 @@ export default function ContactForm() {
                 color='secondary'
                 fullWidth
                 label='Phone'
+                name='phone'
+                onChange={handleChange}
                 placeholder='123-456-7890'
                 size='small'
+                value={form.phone}
                 variant='outlined'
               />
             </Grid>
@@ -98,7 +134,10 @@ export default function ContactForm() {
               label='Your Message'
               minRows={4}
               multiline
+              name='message'
+              onChange={handleChange}
               size='small'
+              value={form.message}
               variant='outlined'
             />
           </Grid>
@@ -118,6 +157,7 @@ export default function ContactForm() {
                   color='secondary'
                   disabled={state.submitting}
                   endIcon={<Icon>send</Icon>}
+                  form='contactForm'
                   type='submit'
                   variant='contained'
                 >

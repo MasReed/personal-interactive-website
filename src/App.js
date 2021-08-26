@@ -54,9 +54,7 @@ function App() {
         >
           <TechContent />
         </SectionLayout>
-
-        { console.log(theme.palette) }
-
+        
         {/* Projects */}
         <SectionLayout
           sectionHeader={'Projects'}
