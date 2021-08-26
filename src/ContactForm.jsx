@@ -3,7 +3,6 @@ import { useForm } from '@formspree/react'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
-import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
 import Link from '@material-ui/core/Link'
 import TextField from '@material-ui/core/TextField'
@@ -19,8 +18,8 @@ const useStyles = makeStyles({
     padding: '0'
   },
   submitButton: {
-    margin: '1rem'
-  }
+    margin: '1.25rem 1rem 0 0'
+  },
 })
 
 export default function ContactForm() {
@@ -101,27 +100,29 @@ export default function ContactForm() {
             />
           </Grid>
 
-          <Grid item style={{ marginLeft: 'auto' }}>
-            <Button
-              className={classes.submitButton}
-              color='secondary'
-              disabled={state.submitting}
-              endIcon={<Icon>send</Icon>}
-              type='submit'
-              variant='contained'
-            >
-              Send
-            </Button>
+          <Grid item xs={12}>
+            <Box display='flex' justifyContent='space-between' className={classes.submitButton}>
+
+              <Box alignSelf='center'>
+                <Typography alignSelf='flex-start' variant='p'>Alternatively, send an email to </Typography>
+                <Link color='secondary' href="mailto:contact@monsed.com">contact@monsed.com</Link>
+              </Box>
+
+              <Box>
+                <Button
+                  color='secondary'
+                  disabled={state.submitting}
+                  endIcon={<Icon>send</Icon>}
+                  type='submit'
+                  variant='contained'
+                >
+                  Send
+                </Button>
+              </Box>
+            </Box>
           </Grid>
         </Grid>
       </form>
-
-      <Divider style={{ marginTop: '5rem' }}/>
-      <Box>
-        <p>Not Working? Try these instead.</p>
-        <p>Send an email to contact@monsed.com</p>
-        <Link color='secondary' href="mailto:name@email.com">Email</Link>
-      </Box>
     </Container>
   )
 }
