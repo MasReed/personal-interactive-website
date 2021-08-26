@@ -43,13 +43,23 @@ export default function ContactForm() {
     horizontal: 'right'
   })
 
-  // if (state.succeeded) {
-  //   setToastState({ ...toastState, open: true })
-  // }
-
   const handleChange = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value})
   }
+
+  const submitForm = (event) => {
+    event.preventDefault()
+    console.log(event)
+
+    handleSubmit(event)
+
+    // if (state.succeeded) {
+    //   setToastState({ ...toastState, open: true })
+    // }
+  }
+
+  // const formRef = document.getElementById('contactForm')
+  // formRef.onsubmit = submitForm
 
   return (
     <Container className={classes.formContainer}>
@@ -62,7 +72,7 @@ export default function ContactForm() {
         <Alert severity='success' color='info'>Thank you reaching out!</Alert>
       </Snackbar>
 
-      <form id='contactForm' onSubmit={handleSubmit}>
+      <form id='contactForm' onSubmit={(event) => submitForm(event)}>
         <Grid
           container
           direction='row'
