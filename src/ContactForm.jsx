@@ -13,12 +13,15 @@ import { makeStyles } from '@material-ui/core/styles'
 import theme from './theme'
 
 const useStyles = makeStyles({
+  formContainer: {
+    margin: '1rem 0'
+  },
   inputSection: {
     margin: '0 0 1.25rem 0',
     padding: '0'
   },
   submitButton: {
-    margin: '1.25rem 1rem 0 0'
+    margin: '1.25rem 1rem 0'
   },
 })
 
@@ -31,7 +34,7 @@ export default function ContactForm() {
   }
 
   return (
-    <Container style={{ margin: '1rem 0'}}>
+    <Container className={classes.formContainer}>
       <form onSubmit={handleSubmit} noValidate autoComplete='off'>
         <Grid
           container
@@ -51,7 +54,7 @@ export default function ContactForm() {
             />
           </Grid>
 
-          <Grid container xs={12} className={classes.inputSection}>
+          <Grid container className={classes.inputSection}>
             <Grid item xs={12} sm={5}>
               <TextField
                 id='email'
@@ -64,7 +67,7 @@ export default function ContactForm() {
               />
             </Grid>
 
-            <Grid item xs={0} sm={2}>
+            <Grid item xs={false} sm={2}>
               <Typography
                 align='center'
                 style={{ color: theme.palette.purple.main + '7F', padding: '.25rem 0' }}
@@ -103,9 +106,11 @@ export default function ContactForm() {
           <Grid item xs={12}>
             <Box display='flex' justifyContent='space-between' className={classes.submitButton}>
 
-              <Box alignSelf='center'>
-                <Typography alignSelf='flex-start' variant='p'>Alternatively, send an email to </Typography>
-                <Link color='secondary' href="mailto:contact@monsed.com">contact@monsed.com</Link>
+              <Box display='flex' flexDirection='column'>
+                <Typography alignself='flex-start' variant='caption'>Alternatively, send an email to:</Typography>
+                <Link color='secondary' href="mailto:contact@monsed.com">
+                  <Typography variant='caption'>contact@monsed.com</Typography>
+                </Link>
               </Box>
 
               <Box>

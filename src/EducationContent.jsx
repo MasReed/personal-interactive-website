@@ -41,7 +41,7 @@ export default function EducationContent() {
     <Box>
       {
         education.map(entry => (
-          <Box className={classes.eduTile}>
+          <Box key={entry.institute} className={classes.eduTile}>
             <Grid container spacing={0}>
               <Grid item sm={4}>
                 <Box display='flex' flexDirection='column' height='100%' justifyContent='space-between'>
@@ -59,29 +59,27 @@ export default function EducationContent() {
                 </Box>
               </Grid>
               <Grid item sm={8}>
-                <Box>
-                  {
-                    entry.titles.map(title => (
-                      <>
-                      <Typography className={classes.eduTitle} variant={'h6'}>
-                        {title.title}
-                      </Typography>
-                      <Typography className={classes.eduDetails} variant={'body2'}>
-                        {title.description}
-                      </Typography>
-                      <Link
-                        color='textPrimary'
-                        href={title.link.href}
-                        target='_blank'
-                        rel='noopener'
-                        variant='overline'
-                      >
-                        {title.link.text}
-                      </Link>
-                      </>
-                    ))
-                  }
-                </Box>
+                {
+                  entry.titles.map(title => (
+                    <Box key={title.title}>
+                    <Typography className={classes.eduTitle} variant={'h6'}>
+                      {title.title}
+                    </Typography>
+                    <Typography className={classes.eduDetails} variant={'body2'}>
+                      {title.description}
+                    </Typography>
+                    <Link
+                      color='textPrimary'
+                      href={title.link.href}
+                      target='_blank'
+                      rel='noopener'
+                      variant='overline'
+                    >
+                      {title.link.text}
+                    </Link>
+                    </Box>
+                  ))
+                }
               </Grid>
             </Grid>
           </Box>
