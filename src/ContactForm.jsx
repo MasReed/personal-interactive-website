@@ -193,21 +193,16 @@ export default function ContactForm() {
       <Box className={classes.resumeTag}>
         <Typography variant='caption'>
           Looking for my resume? You can download it&nbsp;
-          {
-            <a href='Mason Reed Full Stack Developer Resume.pdf' download>here</a>
-          }.
+          {<Link
+            color='secondary'
+            download
+            href='Mason Reed Full Stack Developer Resume.pdf'
+          >
+            here
+          </Link>}.
         </Typography>
       </Box>
 
     </Container>
   )
 }
-
-// <Box className={classes.submitSection}>
-//   <Typography variant='caption'>
-//     You can download my official resume&nbsp;
-//     {
-//       <a href='Mason Reed Full Stack Developer Resume.pdf' download>here</a>
-//     }.
-//   </Typography>
-// </Box>

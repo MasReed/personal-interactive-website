@@ -17,6 +17,7 @@ import theme from './theme'
 const useStyles = makeStyles({
   cardTheme: {
     backgroundColor: theme.palette.cream.main,
+    boxShadow: theme.shadows[18],
     color: 'primary'
   },
   cardImage: {
