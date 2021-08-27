@@ -4,7 +4,14 @@ import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 
+import { makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles({
+})
+
 export default function SectionLayout({ children, id, sectionHeader, ...props }) {
+  const classes = useStyles()
+
   const headingStyle = {
     fontSize: '3.175rem',
     fontWeight: 'normal',
@@ -34,21 +41,32 @@ export default function SectionLayout({ children, id, sectionHeader, ...props })
   }
 
   return (
-    <Box id={id} style={sectionStyle}>
-      <Container>
-        <Typography variant={'h3'} style={headingStyle}>
-          {sectionHeader}
-        </Typography>
-        <Box style={hrSpacingStyle}>
-          <hr style={hrLineStyle} />
-        </Box>
+    <>
+      <Box
+        id={id}
+        display='block'
+        style={{ height: '64px', marginTop: '-64px' }}
+        visibility='hidden'
+        pointerEvents='none'
+      >
+      </Box>
 
-        {children}
+      <Box style={sectionStyle}>
+        <Container>
+          <Typography variant={'h3'} style={headingStyle}>
+            {sectionHeader}
+          </Typography>
+          <Box style={hrSpacingStyle}>
+            <hr style={hrLineStyle} />
+          </Box>
 
-        <Box style={hrSpacingStyle}>
-          <hr style={hrLineStyle} />
-        </Box>
-      </Container>
-    </Box>
+          {children}
+
+          <Box style={hrSpacingStyle}>
+            <hr style={hrLineStyle} />
+          </Box>
+        </Container>
+      </Box>
+    </>
   )
 }
