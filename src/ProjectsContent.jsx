@@ -96,7 +96,7 @@ export default function ProjectsContent() {
           <Grid item xs={12} sm={4}>
             <Card className={classes.cardTheme} variant='outlined'>
               <CardHeader
-                title='Iteractive CV'
+                title='Interactive CV'
                 subheader='My Personal Website'
               />
 

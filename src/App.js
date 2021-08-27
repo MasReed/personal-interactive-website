@@ -3,6 +3,7 @@ import Box from '@material-ui/core/Box'
 import Tab from '@material-ui/core/Tab'
 import Tabs from '@material-ui/core/Tabs'
 import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
 
 import AboutContent from './AboutContent'
 import EducationContent from './EducationContent'

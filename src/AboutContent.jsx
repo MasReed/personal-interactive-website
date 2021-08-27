@@ -107,8 +107,9 @@ export default function AboutContent() {
         {/* Headshot Image */}
         <Grid item sm={4}>
           <Box className={classes.aboutTile}>
-          <img src='images/finalHeadshot.jpg' alt='Masons headshot'
-            style={{ maxHeight: '100%', width: '100%', borderRadius: '3%' }}/>
+            <img src='images/finalHeadshot.jpg' alt='Masons headshot'
+              style={{ maxHeight: '100%', width: '100%', borderRadius: '3%' }}
+            />
           </Box>
         </Grid>
 
