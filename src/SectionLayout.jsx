@@ -4,7 +4,7 @@ import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 
-export default function SectionLayout({ children, sectionHeader, ...props }) {
+export default function SectionLayout({ children, id, sectionHeader, ...props }) {
   const headingStyle = {
     fontSize: '3.175rem',
     fontWeight: 'normal',
@@ -34,7 +34,7 @@ export default function SectionLayout({ children, sectionHeader, ...props }) {
   }
 
   return (
-    <Box style={sectionStyle}>
+    <Box id={id} style={sectionStyle}>
       <Container>
         <Typography variant={'h3'} style={headingStyle}>
           {sectionHeader}

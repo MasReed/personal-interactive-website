@@ -56,8 +56,28 @@ export default function PageFooter () {
                 </Link>
               </Box>
               <Box pt={2}>
-                <Link href='#other' color='inherit'>
-                  Others?
+                <Link href='#tech-skills' color='inherit'>
+                  Tech Skills
+                </Link>
+              </Box>
+              <Box pt={2}>
+                <Link href='#projects' color='inherit'>
+                  Projects
+                </Link>
+              </Box>
+              <Box pt={2}>
+                <Link href='#education' color='inherit'>
+                  Education
+                </Link>
+              </Box>
+              <Box pt={2}>
+                <Link href='#experience' color='inherit'>
+                  Experience
+                </Link>
+              </Box>
+              <Box pt={2}>
+                <Link href='#contact' color='inherit'>
+                  Contact
                 </Link>
               </Box>
             </Grid>

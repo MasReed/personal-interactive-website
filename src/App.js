@@ -40,6 +40,7 @@ function App() {
       <Box id='content' style={{ flex: 1 }}>
         {/* About */}
         <SectionLayout
+          id='about'
           sectionHeader={'Welcome to My Resume'}
           backgroundColor={theme.palette.white.main}
           color={theme.palette.primary.main}
@@ -49,6 +50,7 @@ function App() {
 
         {/* Skills */}
         <SectionLayout
+          id='tech-skills'
           sectionHeader={'Tech Skills'}
           backgroundColor={theme.palette.primary.main}
           color={theme.palette.cream.main}
@@ -58,6 +60,7 @@ function App() {
 
         {/* Projects */}
         <SectionLayout
+          id='projects'
           sectionHeader={'Projects'}
           backgroundColor={theme.palette.white.main}
           color={theme.palette.primary.main}
@@ -67,6 +70,7 @@ function App() {
 
         {/* Education */}
         <SectionLayout
+          id='education'
           sectionHeader={'Education'}
           backgroundColor={theme.palette.primary.main}
           color={theme.palette.cream.main}
@@ -76,6 +80,7 @@ function App() {
 
         {/* Experience */}
         <SectionLayout
+          id='experience'
           sectionHeader={'Experience'}
           backgroundColor={theme.palette.white.main}
           color={theme.palette.primary.main}
@@ -85,6 +90,7 @@ function App() {
 
         {/* Contact */}
         <SectionLayout
+          id='contact'
           sectionHeader={'Get In Touch'}
           backgroundColor={theme.palette.cream.main}
           color={theme.palette.primary.main}
