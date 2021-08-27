@@ -7,8 +7,8 @@ import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import GitHubIcon from '@material-ui/icons/GitHub';
-import InstagramIcon from '@material-ui/icons/Instagram'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import SaveAltIcon from '@material-ui/icons/SaveAlt'
 import WhatshotIcon from '@material-ui/icons/Whatshot'
 
 import theme from './theme'
@@ -38,7 +38,7 @@ const useStyles = makeStyles({
     '&:hover': {
       color: theme.palette.orange.main,
       letterSpacing: '0.1rem',
-      textDecoration: 'none'
+      textDecoration: 'none',
     }
   },
 })
@@ -86,17 +86,18 @@ export default function AboutContent() {
                 </Box>
               </Link>
 
-              {/* Github Link */}
+              {/* Resume PDF Link */}
               <Link
                 className={classes.linkBox}
-                href='http://github.com/masreed'
+                download
+                href='Mason Reed Full Stack Developer Resume.pdf'
                 target='_blank'
                 rel='noopener'
               >
                 <Box display='flex' direction='row' alignItems='center'>
-                  <GitHubIcon fontSize='large' />
+                  <SaveAltIcon fontSize='large' />
                   <Box px={1}>
-                    <Typography variant='overline'>GitHub</Typography>
+                    <Typography variant='overline'>Resume</Typography>
                   </Box>
                 </Box>
               </Link>
@@ -167,7 +168,13 @@ export default function AboutContent() {
                   variant='body1'
                   className={classes.detailText}
                 >
-                  Yes
+                  <Link
+                    href='http://instagram.com/leta_thelovablehusky'
+                    target='_blank'
+                    rel='noopener'
+                  >
+                    Yes
+                  </Link>
                 </Typography>
               </Box>
             </Box>
@@ -178,6 +185,21 @@ export default function AboutContent() {
               flexDirection='row'
               justifyContent='space-around'
             >
+              {/* Github Link */}
+              <Link
+                className={classes.linkBox}
+                href='http://github.com/masreed'
+                target='_blank'
+                rel='noopener'
+              >
+                <Box display='flex' direction='row' alignItems='center'>
+                  <GitHubIcon fontSize='large' />
+                  <Box px={1}>
+                    <Typography variant='overline'>GitHub</Typography>
+                  </Box>
+                </Box>
+              </Link>
+
               {/* Hobbies Link */}
               <Link
                 style={{ pointerEvents: 'none' }}
@@ -191,21 +213,6 @@ export default function AboutContent() {
                   <WhatshotIcon color='secondary' fontSize='large' />
                   <Box px={1}>
                     <Typography variant='overline'>Hobbies</Typography>
-                  </Box>
-                </Box>
-              </Link>
-
-              {/* Instagram Link */}
-              <Link
-                className={classes.linkBox}
-                href='http://instagram.com/leta_thelovablehusky'
-                target='_blank'
-                rel='noopener'
-              >
-                <Box display='flex' direction='row' alignItems='center'>
-                  <InstagramIcon fontSize='large' />
-                  <Box px={1}>
-                    <Typography variant='overline'>Instagram</Typography>
                   </Box>
                 </Box>
               </Link>
