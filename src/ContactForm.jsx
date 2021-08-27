@@ -29,6 +29,10 @@ const useStyles = makeStyles({
   submitButton: {
     color: theme.palette.primary.main,
     backgroundColor: theme.palette.orange.main
+  },
+  resumeTag: {
+    margin: '3.25rem 1rem 0',
+    textAlign: 'right',
   }
 })
 
@@ -163,7 +167,7 @@ export default function ContactForm() {
             <Box display='flex' justifyContent='space-between' className={classes.submitSection}>
 
               <Box display='flex' flexDirection='column'>
-                <Typography alignself='flex-start' variant='caption'>Alternatively, send an email to:</Typography>
+                <Typography alignself='flex-start' variant='caption'>Alternatively, send an email to:&nbsp;</Typography>
                 <Link color='secondary' href="mailto:contact@monsed.com">
                   <Typography variant='caption'>contact@monsed.com</Typography>
                 </Link>
@@ -185,6 +189,25 @@ export default function ContactForm() {
           </Grid>
         </Grid>
       </form>
+
+      <Box className={classes.resumeTag}>
+        <Typography variant='caption'>
+          Looking for my resume? You can download it&nbsp;
+          {
+            <a href='Mason Reed Full Stack Developer Resume.pdf' download>here</a>
+          }.
+        </Typography>
+      </Box>
+
     </Container>
   )
 }
+
+// <Box className={classes.submitSection}>
+//   <Typography variant='caption'>
+//     You can download my official resume&nbsp;
+//     {
+//       <a href='Mason Reed Full Stack Developer Resume.pdf' download>here</a>
+//     }.
+//   </Typography>
+// </Box>
