@@ -1,8 +1,4 @@
-import AppBar from '@material-ui/core/AppBar'
 import Box from '@material-ui/core/Box'
-import Tab from '@material-ui/core/Tab'
-import Tabs from '@material-ui/core/Tabs'
-import Toolbar from '@material-ui/core/Toolbar'
 
 import AboutContent from './AboutContent'
 import EducationContent from './EducationContent'
@@ -12,6 +8,7 @@ import TechContent from './TechContent'
 import ContactForm from './ContactForm'
 import PageFooter from './PageFooter'
 import SectionLayout from './SectionLayout'
+import SiteNavigation from './SiteNavigation/SiteNavigation'
 
 import theme from './theme'
 
@@ -19,14 +16,8 @@ function App() {
 
   return (
     <Box style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-      <AppBar position='sticky'>
-        <Toolbar>
-          <Tabs value={0}>
-            <Tab label='Home' href='http://monsed.com' />
-            <Tab label='Projects' href='http://restaurant.monsed.com' />
-          </Tabs>
-        </Toolbar>
-      </AppBar>
+
+      <SiteNavigation />
 
       <header id='top' >
       {/* <Box p={5} border={1}>

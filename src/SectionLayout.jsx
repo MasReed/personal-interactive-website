@@ -4,13 +4,13 @@ import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 
-import { makeStyles } from '@material-ui/core/styles'
-
-const useStyles = makeStyles({
-})
+// import { makeStyles } from '@material-ui/core/styles'
+//
+// const useStyles = makeStyles({
+// })
 
 export default function SectionLayout({ children, id, sectionHeader, ...props }) {
-  const classes = useStyles()
+  // const classes = useStyles()
 
   const headingStyle = {
     fontSize: '3.175rem',
@@ -45,7 +45,7 @@ export default function SectionLayout({ children, id, sectionHeader, ...props })
       <Box
         id={id}
         display='block'
-        style={{ height: '64px', marginTop: '-64px' }}
+        // style={{ height: '64px', marginTop: '-64px' }}
         visibility='hidden'
         pointerEvents='none'
       >
