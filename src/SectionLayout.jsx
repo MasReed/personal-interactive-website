@@ -42,16 +42,7 @@ export default function SectionLayout({ children, id, sectionHeader, ...props })
 
   return (
     <>
-      <Box
-        id={id}
-        display='block'
-        // style={{ height: '64px', marginTop: '-64px' }}
-        visibility='hidden'
-        pointerEvents='none'
-      >
-      </Box>
-
-      <Box style={sectionStyle}>
+      <Box id={id} style={sectionStyle}>
         <Container>
           <Typography variant={'h3'} style={headingStyle}>
             {sectionHeader}
