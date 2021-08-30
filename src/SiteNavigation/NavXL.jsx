@@ -76,6 +76,7 @@ export default function NavXL() {
           {
             sectionInfo.map(section => (
               <NavLinkXL
+                key={section.id}
                 navNode={section}
                 navLocation={navLocation}
                 setNavLocation={setNavLocation}
