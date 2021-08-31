@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Box from '@material-ui/core/Box'
 
 import AboutContent from './AboutContent'
@@ -14,31 +14,6 @@ import SiteNavigation from './SiteNavigation/SiteNavigation'
 import theme from './theme'
 
 function App() {
-
-  const listenScrollEvent = (event) => {
-    const currentPos = window.scrollY
-    const rect = document.getElementById('experience').getBoundingClientRect()
-    // console.log('bounding Rectangle', rect)
-    const top = rect.top + window.pageYOffset
-    const bot = rect.bottom + window.pageYOffset
-
-    console.log(`current: ${currentPos}, top: ${top}, bottom: ${bot}`)
-
-    if ((currentPos > top) && (currentPos < bot)) {
-      console.log('between')
-      window.history.replaceState({ ...window.history.state }, '', '#experience')
-    } else {
-      console.log('not between')
-      // window.history.replaceState({ ...window.history.state }, '', '#experience')
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener('scroll', listenScrollEvent)
-
-    return () => window.removeEventListener('scroll', listenScrollEvent)
-  }, [])
-
 
   return (
     <Box style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>

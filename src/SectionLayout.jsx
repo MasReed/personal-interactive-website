@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 
+import useOnScreen from './hooks/useOnScreen'
 // import { makeStyles } from '@material-ui/core/styles'
 //
 // const useStyles = makeStyles({
@@ -11,6 +12,16 @@ import Typography from '@material-ui/core/Typography'
 
 export default function SectionLayout({ children, id, sectionHeader, ...props }) {
   // const classes = useStyles()
+
+  const sectionRef = useRef()
+  const onScreen = useOnScreen(sectionRef, '-400px')
+
+  useEffect(() => {
+    if (onScreen) {
+      window.history.replaceState({ ...window.history.state }, '', `#${id}`)
+    }
+  }, [id, onScreen])
+
 
   const headingStyle = {
     fontSize: '3.175rem',
@@ -42,7 +53,7 @@ export default function SectionLayout({ children, id, sectionHeader, ...props })
 
   return (
     <>
-      <Box id={id} style={sectionStyle}>
+      <Box id={id} ref={sectionRef} style={sectionStyle}>
         <Container>
           <Typography variant={'h3'} style={headingStyle}>
             {sectionHeader}
