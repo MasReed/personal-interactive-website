@@ -40,7 +40,7 @@ const useStyles = makeStyles({
 
 export default function NavXL() {
   const classes = useStyles()
-  const [navLocation, setNavLocation] = useState('#about')
+  const [navLocation, setNavLocation] = useState('')
 
   const sectionInfo = [
     {
