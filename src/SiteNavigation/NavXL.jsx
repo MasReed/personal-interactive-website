@@ -13,7 +13,7 @@ const useStyles = makeStyles({
   navPosition: {
     position: 'fixed',
     right: '5%',
-    top: '22%',
+    top: '28%',
   },
   navColor: {
     backgroundColor: theme.palette.primary.main,
