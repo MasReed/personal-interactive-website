@@ -38,7 +38,7 @@ export default function SectionLayout({ children, id, sectionHeader, ...props })
   useEffect(() => {
     if (onScreen) {
       // window.history.pushState({ ...window.history.state }, '', `#${id}`)
-      window.location.href = `#${id}` // triggers hashchange event used by NavLinkXL
+      window.location.href = `#${id}` // triggers hashchange event needed by NavLinkXL
     }
   }, [id, onScreen])
 

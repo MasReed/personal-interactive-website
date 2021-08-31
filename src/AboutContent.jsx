@@ -1,50 +1,51 @@
 import React from 'react'
 
+import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
 import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
-import { makeStyles } from '@material-ui/core/styles'
+
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import SaveAltIcon from '@material-ui/icons/SaveAlt'
 import WhatshotIcon from '@material-ui/icons/Whatshot'
 
-import theme from './theme'
-
-const useStyles = makeStyles({
-  aboutTile: {
+const useStyles = makeStyles((theme) => ({
+  aboutGridItemPadding: {
     padding: '1.25rem 1.75rem'
   },
-  aboutTitle: {
-    color: theme.palette.purple.main
-  },
-  detailBox: {
-    margin: '0 0 .75rem 0'
-  },
-  detailSubtitles: {
-    fontSize: '1rem',
-    fontWeight: 700
-  },
-  detailText: {
-    marginTop: '0'
+  detailItemBox: {
+    margin: '0 0 1.1rem 0'
   },
   dividerMargins: {
+    backgroundColor:' rgba(29, 27, 30, 0.15)',
     margin: '2rem 0'
   },
   linkBox: {
     color: 'primary',
     '&:hover': {
-      color: theme.palette.orange.main,
+      color: theme.palette.secondary.main,
+      fontWeight: 700,
       letterSpacing: '0.1rem',
       textDecoration: 'none',
+      '& $linkText': {
+        color: theme.palette.secondary.main,
+        fontWeight: 700,
+        letterSpacing: '0.1rem',
+        textDecoration: 'none',
+      }
     }
   },
-})
+  linkText: {
+    color: 'primary'
+  },
+}))
 
 export default function AboutContent() {
-  const classes = useStyles()
+  const theme = useTheme()
+  const classes = useStyles(theme)
 
   return (
     <Box id='#about' display='flex'>
@@ -52,11 +53,20 @@ export default function AboutContent() {
         {/* About Me */}
         <Grid item sm={4}>
           <Box display='flex' flexDirection='column' height='100%' justifyContent='space-between'>
-            <Box className={classes.aboutTile}>
-              <Typography color='primary' variant='h4'>About Me</Typography>
+            <Box className={classes.aboutGridItemPadding}>
+              <Typography color='primary' variant='h3'>About Me</Typography>
+
               <Divider className={classes.dividerMargins} />
+
+              {/* Personal Statement */}
+              <Typography color='primary' variant='subtitle1'>
+                I love finding solutions!
+              </Typography>
+
+              <br />
+
               <Typography color='primary' variant='body1'>
-                I love finding solutions! I am a full stack
+                I am a full stack
                 developer and masterful problem solver. My background is
                 in astrophysics and I have experience in STEM education.
                 I have a passion to learn new things and share them with
@@ -66,7 +76,7 @@ export default function AboutContent() {
             </Box>
 
             <Box
-              className={classes.aboutTile}
+              className={classes.aboutGridItemPadding}
               display='flex'
               flexDirection='row'
               justifyContent='space-around'
@@ -81,15 +91,15 @@ export default function AboutContent() {
                 <Box display='flex' direction='row' alignItems='center'>
                   <LinkedInIcon fontSize='large' />
                   <Box px={1}>
-                    <Typography variant='overline'>LinkedIn</Typography>
+                    <Typography className={classes.linkText} variant='overline'>LinkedIn</Typography>
                   </Box>
                 </Box>
               </Link>
 
               {/* Resume PDF Link */}
               <Link
-                className={classes.linkBox}
                 download
+                className={classes.linkBox}
                 href='Mason Reed Full Stack Developer Resume.pdf'
                 target='_blank'
                 rel='noopener'
@@ -97,7 +107,7 @@ export default function AboutContent() {
                 <Box display='flex' direction='row' alignItems='center'>
                   <SaveAltIcon fontSize='large' />
                   <Box px={1}>
-                    <Typography variant='overline'>Resume</Typography>
+                    <Typography className={classes.linkText} variant='overline'>Resume</Typography>
                   </Box>
                 </Box>
               </Link>
@@ -107,7 +117,7 @@ export default function AboutContent() {
 
         {/* Headshot Image */}
         <Grid item sm={4}>
-          <Box className={classes.aboutTile}>
+          <Box className={classes.aboutGridItemPadding}>
             <img src='images/finalHeadshot.jpg' alt='Masons headshot'
               style={{ maxHeight: '100%', width: '100%', borderRadius: '3%' }}
             />
@@ -117,16 +127,15 @@ export default function AboutContent() {
         {/* About Me Facts */}
         <Grid item sm={4}>
           <Box display='flex' flexDirection='column' height='100%' justifyContent='space-between'>
-            <Box className={classes.aboutTile}>
-              <Typography color='primary' variant='h4'>Details</Typography>
+            <Box className={classes.aboutGridItemPadding}>
+              <Typography color='primary' variant='h3'>Details</Typography>
               <Divider className={classes.dividerMargins} />
 
               {/* Name */}
-              <Box className={classes.detailBox}>
+              <Box className={classes.detailItemBox}>
                 <Typography
                   color='primary'
                   variant='subtitle1'
-                  className={classes.detailSubtitles}
                 >
                   Name:
                 </Typography>
@@ -139,11 +148,10 @@ export default function AboutContent() {
               </Box>
 
               {/* Location */}
-              <Box className={classes.detailBox}>
+              <Box className={classes.detailItemBox}>
                 <Typography
                   color='primary'
                   variant='subtitle1'
-                  className={classes.detailSubtitles}
                 >
                   Location:
                 </Typography>
@@ -156,11 +164,10 @@ export default function AboutContent() {
               </Box>
 
               {/* Pets */}
-              <Box className={classes.detailBox}>
+              <Box className={classes.detailItemBox}>
                 <Typography
                   color='primary'
                   variant='subtitle1'
-                  className={classes.detailSubtitles}
                 >
                   Pets
                 </Typography>
@@ -180,7 +187,7 @@ export default function AboutContent() {
             </Box>
 
             <Box
-              className={classes.aboutTile}
+              className={classes.aboutGridItemPadding}
               display='flex'
               flexDirection='row'
               justifyContent='space-around'
@@ -195,15 +202,15 @@ export default function AboutContent() {
                 <Box display='flex' direction='row' alignItems='center'>
                   <GitHubIcon fontSize='large' />
                   <Box px={1}>
-                    <Typography variant='overline'>GitHub</Typography>
+                    <Typography className={classes.linkText} variant='overline'>GitHub</Typography>
                   </Box>
                 </Box>
               </Link>
 
               {/* Hobbies Link */}
+              {/* TEMPORARILY DISABLED via pointerEvents: 'none' */}
               <Link
                 style={{ pointerEvents: 'none' }}
-
                 className={classes.linkBox}
                 href='http://monsed.com/hobbies'
                 target='_blank'
@@ -212,7 +219,7 @@ export default function AboutContent() {
                 <Box display='flex' direction='row' alignItems='center'>
                   <WhatshotIcon color='secondary' fontSize='large' />
                   <Box px={1}>
-                    <Typography variant='overline'>Hobbies</Typography>
+                    <Typography className={classes.linkText} variant='overline'>Hobbies</Typography>
                   </Box>
                 </Box>
               </Link>

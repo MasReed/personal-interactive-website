@@ -12,13 +12,13 @@ const theme = createTheme({
       light: '#727a8f',
       main: '#514e62',
       dark: '#282638',
-      contrastText: '#f5cdaa'
+      contrastText: '#EBF2FF'
     },
     secondary: {
       light: '#ff8f6e',
       main: '#ea5e42',
       dark: '#b12b18',
-      contrastText: '#000000'
+      contrastText: '#000000DE'
     },
     divider: 'rgba(29, 27, 30, 0.25)',
     purple: {
@@ -48,14 +48,19 @@ const theme = createTheme({
     h2: {
       fontSize: '3.175rem',
       fontWeight: 300,
-      letterSpacing: '.0125',
+      letterSpacing: '.0125rem',
       lineHeight: 1.2,
     },
     h3: {
-      fontSize: '3.175rem',
-      fontWeight: 'normal',
-      letterSpacing: '.0125',
-      lineHeight: 1.2,
+      fontSize: '2.4rem',
+      fontWeight: 300,
+    },
+    subtitle1: {
+      fontSize: '1rem',
+      fontWeight: 700
+    },
+    body1: {
+      lineHeight: 1.8
     },
   },
 })

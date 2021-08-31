@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
 
+import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import MenuList from '@material-ui/core/MenuList'
 import Paper from '@material-ui/core/Paper'
 
 import NavLinkXL from './NavLinkXL'
 
-import { makeStyles } from '@material-ui/core/styles'
-import theme from '../theme'
-
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   navPosition: {
     position: 'fixed',
     right: '5%',
@@ -36,10 +34,11 @@ const useStyles = makeStyles({
       color: theme.palette.primary.main,
     }
   }
-})
+}))
 
 export default function NavXL() {
-  const classes = useStyles()
+  const theme = useTheme()
+  const classes = useStyles(theme)
   const [navLocation, setNavLocation] = useState('')
 
   const sectionInfo = [
