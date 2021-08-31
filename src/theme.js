@@ -20,6 +20,7 @@ const theme = createTheme({
       dark: '#b12b18',
       contrastText: '#000000'
     },
+    divider: 'rgba(29, 27, 30, 0.25)',
     purple: {
       main: '#282638'
     },
@@ -43,7 +44,19 @@ const theme = createTheme({
       'Helvetica',
       'Arial',
       'sans-serif'
-    ].join(',')
+    ].join(','),
+    h2: {
+      fontSize: '3.175rem',
+      fontWeight: 300,
+      letterSpacing: '.0125',
+      lineHeight: 1.2,
+    },
+    h3: {
+      fontSize: '3.175rem',
+      fontWeight: 'normal',
+      letterSpacing: '.0125',
+      lineHeight: 1.2,
+    },
   },
 })
 

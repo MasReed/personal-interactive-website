@@ -1,17 +1,36 @@
 import React, { useEffect, useRef } from 'react'
+import useOnScreen from './hooks/useOnScreen'
 
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
+import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
+import { makeStyles } from '@material-ui/core/styles'
 
-import useOnScreen from './hooks/useOnScreen'
-// import { makeStyles } from '@material-ui/core/styles'
-//
-// const useStyles = makeStyles({
-// })
+const useStyles = makeStyles({
+  contentSpacingStyle: {
+    margin: '3rem 0',
+    padding: '1rem 0'
+  },
+  headingStyle: {
+    color: props => props.color,
+    margin: '0',
+    padding: '2rem 0',
+    textAlign: 'center',
+  },
+  hrSpacingStyle: {
+    padding: '1rem 0',
+    margin: '0'
+  },
+  sectionStyle: {
+    backgroundColor: props => props.backgroundColor,
+    margin: 0,
+    padding: '6rem 0'
+  }
+})
 
 export default function SectionLayout({ children, id, sectionHeader, ...props }) {
-  // const classes = useStyles()
+  const classes = useStyles(props)
 
   const sectionRef = useRef()
   const onScreen = useOnScreen(sectionRef, '-400px')
@@ -23,50 +42,24 @@ export default function SectionLayout({ children, id, sectionHeader, ...props })
     }
   }, [id, onScreen])
 
-
-  const headingStyle = {
-    fontSize: '3.175rem',
-    fontWeight: 'normal',
-    letterSpacing: '1px',
-    margin: '0 0 2rem 0',
-    padding: '2rem 0',
-    textAlign: 'center',
-    lineHeight: 1.2,
-    color: props.color,
-  }
-
-  const hrLineStyle = {
-    border: 0,
-    borderColor: '#49464D',
-    borderTop: '1px solid rgba(0, 0, 0, 0.2)',
-  }
-
-  const hrSpacingStyle = {
-    padding: '25px 0',
-    margin: '1rem 0'
-  }
-
-  const sectionStyle = {
-    backgroundColor: props.backgroundColor,
-    margin: 0,
-    padding: '5rem 0'
-  }
-
   return (
     <>
-      <Box id={id} ref={sectionRef} style={sectionStyle}>
+      <Box id={id} ref={sectionRef} className={classes.sectionStyle}>
         <Container>
-          <Typography variant={'h3'} style={headingStyle}>
+          <Typography variant={'h2'} className={classes.headingStyle}>
             {sectionHeader}
           </Typography>
-          <Box style={hrSpacingStyle}>
-            <hr style={hrLineStyle} />
+
+          <Box className={classes.hrSpacingStyle}>
+            <Divider />
           </Box>
 
-          {children}
+          <Box className={classes.contentSpacingStyle}>
+            {children}
+          </Box>
 
-          <Box style={hrSpacingStyle}>
-            <hr style={hrLineStyle} />
+          <Box className={classes.hrSpacingStyle}>
+            <Divider />
           </Box>
         </Container>
       </Box>
