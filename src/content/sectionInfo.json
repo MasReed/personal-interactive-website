@@ -1,0 +1,49 @@
+[
+  {
+    "id": "top",
+    "hashLink": "#top",
+    "linkText": "To Top"
+  },
+  {
+    "id": "about",
+    "hashLink": "#about",
+    "linkText": "About",
+    "title": "About",
+    "header": "Welcome to My Curriculum Vitae"
+  },
+  {
+    "id": "tech-skills",
+    "hashLink": "#tech-skills",
+    "linkText": "Tech Skills",
+    "title": "Technology Skills",
+    "header": "Tech Skills"
+  },
+  {
+    "id": "projects",
+    "hashLink": "#projects",
+    "linkText": "Projects",
+    "title": "Projects",
+    "header": "Projects"
+  },
+  {
+    "id": "education",
+    "hashLink": "#education",
+    "linkText": "Education",
+    "title": "Education",
+    "header": "Education"
+  },
+  {
+    "id": "experience",
+    "hashLink": "#experience",
+    "linkText": "Experience",
+    "title": "Experience",
+    "header": "Experience"
+  },
+  {
+    "id": "contact",
+    "hashLink": "#contact",
+    "linkText": "Contact",
+    "title": "Contact",
+    "header": "Get In Touch"
+  }
+]
