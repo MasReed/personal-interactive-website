@@ -36,7 +36,7 @@ function App() {
         {/* About */}
         <SectionLayout
           id='about'
-          sectionHeader={'Welcome to My Resume'}
+          sectionHeader={'Welcome to My Curriculum Vitae'}
           backgroundColor={theme.palette.white.main}
           color={theme.palette.primary.main}
         >

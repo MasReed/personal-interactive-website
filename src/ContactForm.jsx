@@ -4,7 +4,6 @@ import { useForm } from '@formspree/react'
 import Alert from '@material-ui/lab/Alert'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
-import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Icon from '@material-ui/core/Icon'
 import Link from '@material-ui/core/Link'
@@ -12,32 +11,25 @@ import Snackbar from '@material-ui/core/Snackbar'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 
-import { makeStyles } from '@material-ui/core/styles'
-import theme from './theme'
+import { makeStyles, useTheme } from '@material-ui/core/styles'
 
-const useStyles = makeStyles({
-  formContainer: {
-    margin: '1rem 0'
-  },
+const useStyles = makeStyles((theme) => ({
   inputSection: {
     margin: '0 0 1.25rem 0',
-    padding: '0'
+    padding: '0',
   },
   submitSection: {
-    margin: '1.25rem 1rem 0'
+    margin: '1rem 1rem 0',
   },
   submitButton: {
-    color: theme.palette.primary.main,
-    backgroundColor: theme.palette.orange.main
+    color: theme.palette.primary.dark,
+    backgroundColor: theme.palette.orange.main,
   },
-  resumeTag: {
-    margin: '3.25rem 1rem 0',
-    textAlign: 'right',
-  }
-})
+}))
 
 export default function ContactForm() {
-  const classes = useStyles()
+  const theme = useTheme()
+  const classes = useStyles(theme)
   const [state, handleSubmit] = useForm('xzbykngb')
   const [form, setForm] = useState({
     name: '',
@@ -45,11 +37,13 @@ export default function ContactForm() {
     phone: '',
     message: ''
   })
-  const [toastState, setToastState] = useState({
-    open: false,
-    vertical: 'bottom',
-    horizontal: 'right'
-  })
+
+  // const [toastState, setToastState] = useState({
+  //   open: false,
+  //   vertical: 'bottom',
+  //   horizontal: 'right'
+  // })
+  const [toastState, setToastState] = useState(false)
 
   const handleChange = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value})
@@ -61,7 +55,7 @@ export default function ContactForm() {
     await handleSubmit(event)
 
     if (state.succeeded) {
-      setToastState({ ...toastState, open: true })
+      setToastState(true)
     }
 
     setForm({
@@ -73,15 +67,34 @@ export default function ContactForm() {
   }
 
   return (
-    <Container className={classes.formContainer}>
+    <>
       <Snackbar
-        anchorOrigin={{ vertical: toastState.vertical, horizontal: toastState.horizontal }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
         autoHideDuration={5000}
-        onClose={() => setToastState({ ...toastState, open: false })}
-        open={toastState.open}
+        onClose={() => setToastState(false)}
+        open={toastState}
       >
         <Alert severity='success' color='info'>Thank you reaching out!</Alert>
       </Snackbar>
+
+      <Box pb={3}>
+        <Typography color='primary' variant='h4'>
+          Leave a message!
+        </Typography>
+
+        <Box pt={'1rem'} pl={'1rem'}>
+          <Typography variant='caption'>
+            Looking for my resume? You can download it&nbsp;
+            {<Link
+              color='secondary'
+              download
+              href='Mason Reed Full Stack Developer Resume.pdf'
+            >
+              here
+            </Link>}.
+          </Typography>
+        </Box>
+      </Box>
 
       <form id='contactForm' onSubmit={(event) => submitForm(event)}>
         <Grid
@@ -89,7 +102,7 @@ export default function ContactForm() {
           direction='row'
           spacing={0}
         >
-
+          {/* Contact Name */}
           <Grid item xs={12} className={classes.inputSection}>
             <TextField
               id='name'
@@ -99,12 +112,14 @@ export default function ContactForm() {
               name='name'
               onChange={handleChange}
               placeholder='Jane Doe'
+              required
               size='small'
               value={form.name}
               variant='outlined'
             />
           </Grid>
 
+          {/* Contact Email */}
           <Grid container className={classes.inputSection}>
             <Grid item xs={12} sm={5}>
               <TextField
@@ -115,22 +130,25 @@ export default function ContactForm() {
                 name='email'
                 onChange={handleChange}
                 placeholder='jane@doe.com'
+                required
                 size='small'
                 value={form.email}
                 variant='outlined'
               />
             </Grid>
 
+            {/* Decorative Spacing Element */}
             <Grid item xs={false} sm={2}>
               <Typography
                 align='center'
                 style={{ color: theme.palette.purple.main + '7F', padding: '.25rem 0' }}
                 variant='h6'
               >
-                -OR-
+                -
               </Typography>
             </Grid>
 
+            {/* Contact Phone */}
             <Grid item xs={12} sm={5}>
               <TextField
                 id='phone'
@@ -147,6 +165,7 @@ export default function ContactForm() {
             </Grid>
           </Grid>
 
+          {/* Contact Message */}
           <Grid item xs={12} className={classes.inputSection}>
             <TextField
               id='message'
@@ -157,52 +176,55 @@ export default function ContactForm() {
               multiline
               name='message'
               onChange={handleChange}
+              required
               size='small'
               value={form.message}
               variant='outlined'
             />
           </Grid>
 
-          <Grid item xs={12}>
-            <Box display='flex' justifyContent='space-between' className={classes.submitSection}>
+          {/* Contact Submission Area */}
+          <Grid
+            item
+            container
+            direction='row'
+            alignItems='flex-start'
+            justifyContent='space-between'
+            xs={12}
+            className={classes.submitSection}
+          >
+            <Box display='flex' flexDirection='column' justifyContent='space-between'>
+              <Typography variant='caption'>
+                Alternatively, send an email to:&nbsp;
+              </Typography>
 
-              <Box display='flex' flexDirection='column'>
-                <Typography alignself='flex-start' variant='caption'>Alternatively, send an email to:&nbsp;</Typography>
-                <Link color='secondary' href="mailto:contact@monsed.com">
-                  <Typography variant='caption'>contact@monsed.com</Typography>
-                </Link>
-              </Box>
-
-              <Box>
-                <Button
-                  className={classes.submitButton}
-                  disabled={state.submitting}
-                  endIcon={<Icon>send</Icon>}
-                  form='contactForm'
-                  type='submit'
-                  variant='contained'
-                >
-                  Send
-                </Button>
-              </Box>
+              <Typography
+                component={Link}
+                href='mailto:contact@monsed.com'
+                target='_blank'
+                rel='noopener'
+                color='secondary'
+                variant='caption'
+              >
+                contact@monsed.com
+              </Typography>
             </Box>
+
+            {/* Submit Form Button */}
+            <Button
+              className={classes.submitButton}
+              disabled={state.submitting}
+              endIcon={<Icon>send</Icon>}
+              form='contactForm'
+              type='submit'
+              variant='contained'
+            >
+              Send
+            </Button>
           </Grid>
+
         </Grid>
       </form>
-
-      <Box className={classes.resumeTag}>
-        <Typography variant='caption'>
-          Looking for my resume? You can download it&nbsp;
-          {<Link
-            color='secondary'
-            download
-            href='Mason Reed Full Stack Developer Resume.pdf'
-          >
-            here
-          </Link>}.
-        </Typography>
-      </Box>
-
-    </Container>
+    </>
   )
 }
