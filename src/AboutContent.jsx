@@ -59,14 +59,8 @@ export default function AboutContent() {
               <Divider className={classes.dividerMargins} />
 
               {/* Personal Statement */}
-              <Typography color='primary' variant='subtitle1'>
-                I love finding solutions!
-              </Typography>
-
-              <br />
-
               <Typography color='primary' variant='body1'>
-                I am a full stack
+                I love finding solutions! I am a full stack web
                 developer and masterful problem solver. My background is
                 in astrophysics and I have experience in STEM education.
                 I have a passion to learn new things and share them with

@@ -1,5 +1,6 @@
 import React from 'react'
-import Box from '@material-ui/core/Box'
+import { useTheme } from '@material-ui/core/styles'
+import Grid from '@material-ui/core/Grid'
 
 import AboutContent from './AboutContent'
 import EducationContent from './EducationContent'
@@ -11,12 +12,15 @@ import PageFooter from './PageFooter'
 import SectionLayout from './SectionLayout'
 import SiteNavigation from './SiteNavigation/SiteNavigation'
 
-import theme from './theme'
-
 function App() {
+  const theme = useTheme()
 
   return (
-    <Box style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <Grid
+      container
+      direction='column'
+      style={{ minHeight: '100vh' }}
+    >
 
       <SiteNavigation />
 
@@ -28,7 +32,7 @@ function App() {
       </header>
 
       {/* Main Content of Page */}
-      <Box id='content' style={{ flex: 1 }}>
+      <Grid item id='content' style={{ flex: 1}}>
         {/* About */}
         <SectionLayout
           id='about'
@@ -88,10 +92,11 @@ function App() {
         >
           <ContactForm />
         </SectionLayout>
-      </Box>
+      </Grid>
 
       <PageFooter />
-    </Box>
+
+    </Grid>
   )
 }
 
