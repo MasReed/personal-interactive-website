@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useForm } from '@formspree/react'
+import { ValidationError, useForm } from '@formspree/react'
 
 import Alert from '@material-ui/lab/Alert'
 import Box from '@material-ui/core/Box'
@@ -38,11 +38,6 @@ export default function ContactForm() {
     message: ''
   })
 
-  // const [toastState, setToastState] = useState({
-  //   open: false,
-  //   vertical: 'bottom',
-  //   horizontal: 'right'
-  // })
   const [toastState, setToastState] = useState(false)
 
   const handleChange = (event) => {
@@ -52,24 +47,25 @@ export default function ContactForm() {
   const submitForm = async (event) => {
     event.preventDefault()
 
-    await handleSubmit(event)
+    const res = await handleSubmit(event)
+    console.log(res)
 
     if (state.succeeded) {
       setToastState(true)
-    }
 
-    setForm({
-      name: '',
-      email: '',
-      phone: '',
-      message: ''
-    })
+      setForm({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      })
+    }
   }
 
   return (
     <>
       <Snackbar
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
         autoHideDuration={5000}
         onClose={() => setToastState(false)}
         open={toastState}
@@ -82,7 +78,7 @@ export default function ContactForm() {
           Leave a message!
         </Typography>
 
-        <Box pt={'1rem'} pl={'1rem'}>
+        <Box className={classes.submitSection}>
           <Typography variant='caption'>
             Looking for my resume? You can download it&nbsp;
             {<Link
@@ -117,6 +113,7 @@ export default function ContactForm() {
               value={form.name}
               variant='outlined'
             />
+            <ValidationError field='name' prefix='Name' errors={state.errors} />
           </Grid>
 
           {/* Contact Email */}
@@ -135,6 +132,7 @@ export default function ContactForm() {
                 value={form.email}
                 variant='outlined'
               />
+              <ValidationError field='email' prefix='Email' errors={state.errors} />
             </Grid>
 
             {/* Decorative Spacing Element */}
@@ -162,6 +160,7 @@ export default function ContactForm() {
                 value={form.phone}
                 variant='outlined'
               />
+              <ValidationError field='phone' prefix='Phone' errors={state.errors} />
             </Grid>
           </Grid>
 
@@ -181,6 +180,7 @@ export default function ContactForm() {
               value={form.message}
               variant='outlined'
             />
+            <ValidationError field='message' prefix='Message' errors={state.errors} />
           </Grid>
 
           {/* Contact Submission Area */}
