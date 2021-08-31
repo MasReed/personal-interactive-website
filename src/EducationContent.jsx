@@ -29,7 +29,7 @@ const useStyles = makeStyles({
     color: theme.palette.cream.main
   },
   eduTile: {
-    padding: '1.25rem 1.75rem'
+    padding: '1.25rem 0'
   },
   eduTitle: {
     color: theme.palette.orange.main
@@ -41,7 +41,7 @@ export default function EducationContent() {
   const classes = useStyles()
 
   return (
-    <Box>
+    <>
       {
         education.map(entry => (
           <Box key={entry.institute} className={classes.eduTile}>
@@ -88,6 +88,6 @@ export default function EducationContent() {
           </Box>
         ))
       }
-    </Box>
+    </>
   )
 }

@@ -48,179 +48,177 @@ export default function AboutContent() {
   const classes = useStyles(theme)
 
   return (
-    <Box id='#about' display='flex'>
-      <Grid container spacing={0}>
-        {/* About Me */}
-        <Grid item sm={4}>
-          <Box display='flex' flexDirection='column' height='100%' justifyContent='space-between'>
-            <Box className={classes.aboutGridItemPadding}>
-              <Typography color='primary' variant='h3'>About Me</Typography>
+    <Grid container spacing={0}>
+      {/* About Me */}
+      <Grid item sm={4}>
+        <Box display='flex' flexDirection='column' height='100%' justifyContent='space-between'>
+          <Box className={classes.aboutGridItemPadding}>
+            <Typography color='primary' variant='h3'>About Me</Typography>
 
-              <Divider className={classes.dividerMargins} />
+            <Divider className={classes.dividerMargins} />
 
-              {/* Personal Statement */}
-              <Typography color='primary' variant='body1'>
-                I love finding solutions! I am a full stack web
-                developer and masterful problem solver. My background is
-                in astrophysics and I have experience in STEM education.
-                I have a passion to learn new things and share them with
-                others. I also enjoy multiplayer strategy
-                games, such as Magic: the Gathering and Catan!
+            {/* Personal Statement */}
+            <Typography color='primary' variant='body1'>
+              I love finding solutions! I am a full stack web
+              developer and masterful problem solver. My background is
+              in astrophysics and I have experience in STEM education.
+              I have a passion to learn new things and share them with
+              others. I also enjoy multiplayer strategy
+              games, such as Magic: the Gathering and Catan!
+            </Typography>
+          </Box>
+
+          <Box
+            className={classes.aboutGridItemPadding}
+            display='flex'
+            flexDirection='row'
+            justifyContent='space-around'
+          >
+            {/* LinkedIn Link */}
+            <Link
+              className={classes.linkBox}
+              href='http://linkedin.com/in/masreed'
+              target='_blank'
+              rel='noopener'
+            >
+              <Box display='flex' direction='row' alignItems='center'>
+                <LinkedInIcon fontSize='large' />
+                <Box px={1}>
+                  <Typography className={classes.linkText} variant='overline'>LinkedIn</Typography>
+                </Box>
+              </Box>
+            </Link>
+
+            {/* Resume PDF Link */}
+            <Link
+              download
+              className={classes.linkBox}
+              href='Mason Reed Full Stack Developer Resume.pdf'
+              target='_blank'
+              rel='noopener'
+            >
+              <Box display='flex' direction='row' alignItems='center'>
+                <SaveAltIcon fontSize='large' />
+                <Box px={1}>
+                  <Typography className={classes.linkText} variant='overline'>Resume</Typography>
+                </Box>
+              </Box>
+            </Link>
+          </Box>
+        </Box>
+      </Grid>
+
+      {/* Headshot Image */}
+      <Grid item sm={4}>
+        <Box className={classes.aboutGridItemPadding}>
+          <img src='images/finalHeadshot.jpg' alt='Masons headshot'
+            style={{ maxHeight: '100%', width: '100%', borderRadius: '3%' }}
+          />
+        </Box>
+      </Grid>
+
+      {/* About Me Facts */}
+      <Grid item sm={4}>
+        <Box display='flex' flexDirection='column' height='100%' justifyContent='space-between'>
+          <Box className={classes.aboutGridItemPadding}>
+            <Typography color='primary' variant='h3'>Details</Typography>
+            <Divider className={classes.dividerMargins} />
+
+            {/* Name */}
+            <Box className={classes.detailItemBox}>
+              <Typography
+                color='primary'
+                variant='subtitle1'
+              >
+                Name:
+              </Typography>
+              <Typography
+                variant='body1'
+                className={classes.detailText}
+              >
+                Mason Reed
               </Typography>
             </Box>
 
-            <Box
-              className={classes.aboutGridItemPadding}
-              display='flex'
-              flexDirection='row'
-              justifyContent='space-around'
+            {/* Location */}
+            <Box className={classes.detailItemBox}>
+              <Typography
+                color='primary'
+                variant='subtitle1'
+              >
+                Location:
+              </Typography>
+              <Typography
+                variant='body1'
+                className={classes.detailText}
+              >
+                Milwaukee, WI - USA
+              </Typography>
+            </Box>
+
+            {/* Pets */}
+            <Box className={classes.detailItemBox}>
+              <Typography
+                color='primary'
+                variant='subtitle1'
+              >
+                Pets
+              </Typography>
+              <Typography
+                variant='body1'
+                className={classes.detailText}
+              >
+                <Link
+                  href='http://instagram.com/leta_thelovablehusky'
+                  target='_blank'
+                  rel='noopener'
+                >
+                  Yes
+                </Link>
+              </Typography>
+            </Box>
+          </Box>
+
+          <Box
+            className={classes.aboutGridItemPadding}
+            display='flex'
+            flexDirection='row'
+            justifyContent='space-around'
+          >
+            {/* Github Link */}
+            <Link
+              className={classes.linkBox}
+              href='http://github.com/masreed'
+              target='_blank'
+              rel='noopener'
             >
-              {/* LinkedIn Link */}
-              <Link
-                className={classes.linkBox}
-                href='http://linkedin.com/in/masreed'
-                target='_blank'
-                rel='noopener'
-              >
-                <Box display='flex' direction='row' alignItems='center'>
-                  <LinkedInIcon fontSize='large' />
-                  <Box px={1}>
-                    <Typography className={classes.linkText} variant='overline'>LinkedIn</Typography>
-                  </Box>
+              <Box display='flex' direction='row' alignItems='center'>
+                <GitHubIcon fontSize='large' />
+                <Box px={1}>
+                  <Typography className={classes.linkText} variant='overline'>GitHub</Typography>
                 </Box>
-              </Link>
-
-              {/* Resume PDF Link */}
-              <Link
-                download
-                className={classes.linkBox}
-                href='Mason Reed Full Stack Developer Resume.pdf'
-                target='_blank'
-                rel='noopener'
-              >
-                <Box display='flex' direction='row' alignItems='center'>
-                  <SaveAltIcon fontSize='large' />
-                  <Box px={1}>
-                    <Typography className={classes.linkText} variant='overline'>Resume</Typography>
-                  </Box>
-                </Box>
-              </Link>
-            </Box>
-          </Box>
-        </Grid>
-
-        {/* Headshot Image */}
-        <Grid item sm={4}>
-          <Box className={classes.aboutGridItemPadding}>
-            <img src='images/finalHeadshot.jpg' alt='Masons headshot'
-              style={{ maxHeight: '100%', width: '100%', borderRadius: '3%' }}
-            />
-          </Box>
-        </Grid>
-
-        {/* About Me Facts */}
-        <Grid item sm={4}>
-          <Box display='flex' flexDirection='column' height='100%' justifyContent='space-between'>
-            <Box className={classes.aboutGridItemPadding}>
-              <Typography color='primary' variant='h3'>Details</Typography>
-              <Divider className={classes.dividerMargins} />
-
-              {/* Name */}
-              <Box className={classes.detailItemBox}>
-                <Typography
-                  color='primary'
-                  variant='subtitle1'
-                >
-                  Name:
-                </Typography>
-                <Typography
-                  variant='body1'
-                  className={classes.detailText}
-                >
-                  Mason Reed
-                </Typography>
               </Box>
+            </Link>
 
-              {/* Location */}
-              <Box className={classes.detailItemBox}>
-                <Typography
-                  color='primary'
-                  variant='subtitle1'
-                >
-                  Location:
-                </Typography>
-                <Typography
-                  variant='body1'
-                  className={classes.detailText}
-                >
-                  Milwaukee, WI - USA
-                </Typography>
-              </Box>
-
-              {/* Pets */}
-              <Box className={classes.detailItemBox}>
-                <Typography
-                  color='primary'
-                  variant='subtitle1'
-                >
-                  Pets
-                </Typography>
-                <Typography
-                  variant='body1'
-                  className={classes.detailText}
-                >
-                  <Link
-                    href='http://instagram.com/leta_thelovablehusky'
-                    target='_blank'
-                    rel='noopener'
-                  >
-                    Yes
-                  </Link>
-                </Typography>
-              </Box>
-            </Box>
-
-            <Box
-              className={classes.aboutGridItemPadding}
-              display='flex'
-              flexDirection='row'
-              justifyContent='space-around'
+            {/* Hobbies Link */}
+            {/* TEMPORARILY DISABLED via pointerEvents: 'none' */}
+            <Link
+              style={{ pointerEvents: 'none' }}
+              className={classes.linkBox}
+              href='http://monsed.com/hobbies'
+              target='_blank'
+              rel='noopener'
             >
-              {/* Github Link */}
-              <Link
-                className={classes.linkBox}
-                href='http://github.com/masreed'
-                target='_blank'
-                rel='noopener'
-              >
-                <Box display='flex' direction='row' alignItems='center'>
-                  <GitHubIcon fontSize='large' />
-                  <Box px={1}>
-                    <Typography className={classes.linkText} variant='overline'>GitHub</Typography>
-                  </Box>
+              <Box display='flex' direction='row' alignItems='center'>
+                <WhatshotIcon color='secondary' fontSize='large' />
+                <Box px={1}>
+                  <Typography className={classes.linkText} variant='overline'>Hobbies</Typography>
                 </Box>
-              </Link>
-
-              {/* Hobbies Link */}
-              {/* TEMPORARILY DISABLED via pointerEvents: 'none' */}
-              <Link
-                style={{ pointerEvents: 'none' }}
-                className={classes.linkBox}
-                href='http://monsed.com/hobbies'
-                target='_blank'
-                rel='noopener'
-              >
-                <Box display='flex' direction='row' alignItems='center'>
-                  <WhatshotIcon color='secondary' fontSize='large' />
-                  <Box px={1}>
-                    <Typography className={classes.linkText} variant='overline'>Hobbies</Typography>
-                  </Box>
-                </Box>
-              </Link>
-            </Box>
+              </Box>
+            </Link>
           </Box>
-        </Grid>
+        </Box>
       </Grid>
-    </Box>
+    </Grid>
   )
 }
