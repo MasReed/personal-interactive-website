@@ -1,0 +1,30 @@
+{
+  "languages": [
+    "Javascript/ECMAscript",
+    "MongoDB Query Language (MQL)",
+    "Python",
+    "HTML/CSS",
+    "SQL"
+  ],
+  "technologies": [
+    "Git & Github",
+    "React Framework",
+    "Bootstrap Framework",
+    "Material-ui Framework",
+    "Heroku"
+  ],
+  "utilities": [
+    "MS Office 365 Suite",
+    "Teams/Zoom",
+    "Slack/Discord",
+    "LateX",
+    "Markdown"
+  ],
+  "other": [
+    "Arduino",
+    "Unreal Engine 4",
+    "C++, RobotC",
+    "FreeCAD",
+    "VEX Robotics"
+  ]
+}

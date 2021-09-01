@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { makeStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
@@ -7,41 +7,9 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 // import Typography from '@material-ui/core/Typography'
 
-import { makeStyles } from '@material-ui/core/styles'
+import techSkills from './content/techSkills.json'
 
 export default function TechContent() {
-
-  const techContent = {
-    languages: [
-      'Javascript/ECMAscript',
-      'MongoDB Query Language (MQL)',
-      'Python',
-      'HTML/CSS',
-      'SQL',
-    ],
-    technologies: [
-      'Git & Github',
-      'React Framework',
-      'Bootstrap Framework',
-      'Material-ui Framework',
-      'Heroku'
-    ],
-    utilities: [
-      'MS Office 365 Suite',
-      'Teams/Zoom',
-      'Slack/Discord',
-      'LateX',
-      'Markdown',
-    ],
-    other: [
-      'Arduino',
-      'Unreal Engine 4',
-      'C++, RobotC',
-      'FreeCAD',
-      'VEX Robotics'
-    ],
-  }
-
   const useStyles = makeStyles({
     heading: {
       color: '#f5cdaa'
@@ -62,13 +30,13 @@ export default function TechContent() {
       <Container style={{ margin: '0', padding: '0 16px' }}>
         <Grid container spacing={4}>
           {
-            Object.keys(techContent).map((key) => {
+            Object.keys(techSkills).map((key) => {
               return (
                 <Grid item sm={3} key={key}>
                   <h2 className={classes.heading}>{key[0].toUpperCase() + key.slice(1)}</h2>
                   <List>
                     {
-                      techContent[key].map(item => (
+                      techSkills[key].map(item => (
                         <ListItem
                           key={item.toString()}
                           className={classes.listItemStyle}

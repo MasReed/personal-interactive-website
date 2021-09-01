@@ -36,7 +36,6 @@ const useStyles = makeStyles({
   },
 })
 
-
 export default function EducationContent() {
   const classes = useStyles()
 
