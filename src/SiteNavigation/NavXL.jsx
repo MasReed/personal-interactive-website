@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-
+import React, { useEffect, useState } from 'react'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import MenuList from '@material-ui/core/MenuList'
 import Paper from '@material-ui/core/Paper'
 
 import NavLinkXL from './NavLinkXL'
+import NavUpDownXL from './NavUpDownXL'
 
 const useStyles = makeStyles((theme) => ({
   navPosition: {
@@ -68,17 +68,30 @@ export default function NavXL() {
     },
   ]
 
+  // Add an event listener for changes to location.hash on initial render
+  useEffect(() => {
+    const hashListener = () => {
+      setNavLocation(window.location.hash)
+    }
+    window.addEventListener('hashchange', hashListener, false)
+
+    return () => window.removeEventListener('hashchange', hashListener)
+  }, [])
+
   return (
     <Box className={classes.navPosition}>
       <Paper className={classes.navColor} variant='outlined'>
         <MenuList>
+          <NavUpDownXL
+            sections={sectionInfo}
+            navLocation={navLocation}
+            setNavLocation={setNavLocation}
+          />
           {
             sectionInfo.map(section => (
               <NavLinkXL
                 key={section.id}
                 navNode={section}
-                navLocation={navLocation}
-                setNavLocation={setNavLocation}
                 activeClass={classes.navActive}
                 inactiveClass={classes.navInactiveHover}
               />
