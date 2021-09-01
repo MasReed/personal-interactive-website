@@ -85,7 +85,6 @@ export default function NavXL() {
           <NavUpDownXL
             sections={sectionInfo}
             navLocation={navLocation}
-            setNavLocation={setNavLocation}
           />
           {
             sectionInfo.map(section => (
