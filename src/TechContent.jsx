@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
@@ -9,21 +9,22 @@ import ListItem from '@material-ui/core/ListItem'
 
 import techSkills from './content/techSkills.json'
 
-export default function TechContent() {
-  const useStyles = makeStyles({
-    heading: {
-      color: '#f5cdaa'
-    },
-    listItemStyle: {
-      backgroundColor: '#49464d',
-      borderRadius: 3,
-      border: '1px solid #ea5e42',
-      color: '#EBF2FF',
-      margin: '1px 0'
-    }
-  })
+const useStyles = makeStyles((theme) => ({
+  heading: {
+    color: '#f5cdaa'
+  },
+  listItemStyle: {
+    backgroundColor: '#49464d',
+    borderRadius: 3,
+    border: '1px solid #ea5e42',
+    color: '#EBF2FF',
+    margin: '1px 0'
+  }
+}))
 
-  const classes = useStyles()
+export default function TechContent() {
+  const theme = useTheme()
+  const classes = useStyles(theme)
 
   return (
     <Box>

@@ -1,17 +1,14 @@
 import React from 'react'
-
+import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
 import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
 
-import { makeStyles } from '@material-ui/core/styles'
-
-import theme from './theme'
 import education from './content/education.json'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   dateText: {
     color: theme.palette.white.main
   },
@@ -34,10 +31,11 @@ const useStyles = makeStyles({
   eduTitle: {
     color: theme.palette.orange.main
   },
-})
+}))
 
 export default function EducationContent() {
-  const classes = useStyles()
+  const theme = useTheme()
+  const classes = useStyles(theme)
 
   return (
     <>

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
@@ -10,10 +10,7 @@ import Grid from '@material-ui/core/Grid'
 import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
 
-import { makeStyles } from '@material-ui/core/styles'
-import theme from './theme'
-
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   cardTheme: {
     backgroundColor: theme.palette.cream.main,
     boxShadow: theme.shadows[18],
@@ -38,11 +35,11 @@ const useStyles = makeStyles({
     margin: '0 .5rem .25rem',
     width: '100%'
   }
-})
-
+}))
 
 export default function ProjectsContent() {
-  const classes = useStyles()
+  const theme = useTheme()
+  const classes = useStyles(theme)
 
   return (
     <Grid container spacing={3}>

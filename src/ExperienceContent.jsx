@@ -1,15 +1,11 @@
 import React from 'react'
-
+import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
 
-import { makeStyles } from '@material-ui/core/styles'
-import theme from './theme'
-
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   expTile: {
-    // color: '#49464d',
     color: theme.palette.orange.main,
     padding: '1.25rem 0'
   },
@@ -22,10 +18,11 @@ const useStyles = makeStyles({
   expTitle: {
     color: theme.palette.purple.main
   }
-})
+}))
 
 export default function ExperienceContent() {
-  const classes = useStyles()
+  const theme = useTheme()
+  const classes = useStyles(theme)
 
   return (
     <>
