@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { ValidationError, useForm } from '@formspree/react'
 
+import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Alert from '@material-ui/lab/Alert'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
@@ -11,9 +12,16 @@ import Snackbar from '@material-ui/core/Snackbar'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 
-import { makeStyles, useTheme } from '@material-ui/core/styles'
-
 const useStyles = makeStyles((theme) => ({
+  altLinkText: {
+    color: theme.palette.primary.main,
+    '&:hover': {
+      color: theme.palette.orange.main,
+      fontWeight: 'bold',
+      letterSpacing: '0.085rem',
+      textDecoration: 'none'
+    }
+  },
   inputSection: {
     margin: '0 0 1.25rem 0',
     padding: '0',
@@ -82,7 +90,7 @@ export default function ContactForm() {
           <Typography variant='caption'>
             Looking for my resume? You can download it&nbsp;
             {<Link
-              color='secondary'
+              className={classes.altLinkText}
               download
               href='Mason Reed Full Stack Developer Resume.pdf'
             >
@@ -199,11 +207,11 @@ export default function ContactForm() {
               </Typography>
 
               <Typography
+                className={classes.altLinkText}
                 component={Link}
                 href='mailto:contact@monsed.com'
                 target='_blank'
                 rel='noopener'
-                color='secondary'
                 variant='caption'
               >
                 contact@monsed.com
@@ -222,7 +230,6 @@ export default function ContactForm() {
               Send
             </Button>
           </Grid>
-
         </Grid>
       </form>
     </>
