@@ -9,7 +9,14 @@ import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
 
 const useStyles = makeStyles((theme) => ({
   buttonStyle: {
-    
+    padding: '1rem 0',
+    backgroundColor: theme.palette.secondary.light,
+    color: theme.palette.primary.dark,
+    '&:hover': {
+      backgroundColor: theme.palette.white.main,
+      color: theme.palette.primary.main,
+      padding: '1.15rem 0',
+    }
   }
 }))
 
@@ -21,17 +28,16 @@ export default function NavUpDownXL({ sections, navLocation }) {
   const [nextSection, setNextSection] = useState('')
   const [atBottom, setAtBottom] = useState(false)
 
+  // Move to selected section on click
   const linkRef = useRef(null)
-
   const executeScroll = () => {
     linkRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   useEffect(() => {
+    // Get href for next section by index in sections array
     const nextSectionIndex = sectionIds.indexOf(navLocation) + 1
     const nextSectionRef = sectionIds[nextSectionIndex]
-
-    console.log('useEffectNextSection', nextSectionRef)
 
     if (!nextSectionRef) {
       setNextSection('#top')
