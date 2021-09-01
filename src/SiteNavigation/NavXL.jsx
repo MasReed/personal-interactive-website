@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
+import Divider from '@material-ui/core/Divider'
 import MenuList from '@material-ui/core/MenuList'
 import Paper from '@material-ui/core/Paper'
 
@@ -15,24 +16,32 @@ const useStyles = makeStyles((theme) => ({
   },
   navColor: {
     backgroundColor: theme.palette.primary.main,
-    borderColor: theme.palette.cream.main,
     color: theme.palette.cream.main,
   },
   navActive: {
-    backgroundColor: theme.palette.orange.main,
-    color: theme.palette.primary.main,
-    padding: '1rem',
-    '&:hover': {
-      backgroundColor: theme.palette.orange.main,
-      color: theme.palette.primary.main,
-    }
-  },
-  navInactiveHover: {
+    backgroundColor: theme.palette.secondary.light,
+    color: theme.palette.primary.dark,
+    boxShadow: theme.shadows[24],
     padding: '1rem',
     '&:hover': {
       backgroundColor: theme.palette.white.main,
-      color: theme.palette.primary.main,
+      color: theme.palette.primary.dark,
+      padding: '1.15rem 1rem',
     }
+  },
+  navInactive: {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.cream.main,
+    padding: '1rem',
+    '&:hover': {
+      backgroundColor: theme.palette.white.main,
+      color: theme.palette.primary.dark,
+      padding: '1.15rem 1rem',
+    }
+  },
+  bumpDivider: {
+    backgroundColor: theme.palette.primary.main,
+    height: '.125rem'
   }
 }))
 
@@ -41,6 +50,7 @@ export default function NavXL() {
   const classes = useStyles(theme)
   const [navLocation, setNavLocation] = useState('')
 
+  // id is used as href, title used as navigation text
   const sectionInfo = [
     {
       id: '#about',
@@ -68,7 +78,7 @@ export default function NavXL() {
     },
   ]
 
-  // Add an event listener for changes to location.hash on initial render
+  // Handles EventListener for changes to location.hash
   useEffect(() => {
     const hashListener = () => {
       setNavLocation(window.location.hash)
@@ -80,19 +90,20 @@ export default function NavXL() {
 
   return (
     <Box className={classes.navPosition}>
-      <Paper className={classes.navColor} variant='outlined'>
+      <Paper className={classes.navColor} elevation={24} variant='elevation'>
         <MenuList>
           <NavUpDownXL
             sections={sectionInfo}
             navLocation={navLocation}
           />
+          <Divider className={classes.bumpDivider} />
           {
             sectionInfo.map(section => (
               <NavLinkXL
                 key={section.id}
                 navNode={section}
                 activeClass={classes.navActive}
-                inactiveClass={classes.navInactiveHover}
+                inactiveClass={classes.navInactive}
               />
             ))
           }
