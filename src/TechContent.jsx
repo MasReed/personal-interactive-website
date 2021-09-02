@@ -90,13 +90,35 @@ export default function TechContent() {
           }
 
         </Grid>
+
+        {
+          Object.keys(techSkills).slice(1).map((key) => {
+            return (
+              <Grid item sm={3} key={key}>
+                <Typography className={classes.heading} variant='h5'>
+                  {key[0].toUpperCase() + key.slice(1)}
+                </Typography>
+                <List>
+                  {
+                    techSkills[key].map(item => (
+                      <ListItem
+                        key={item.toString()}
+                        className={classes.listItemStyle}
+                      >
+                        {item}
+                      </ListItem>
+                    ))
+                  }
+                </List>
+              </Grid>
+            )
+          })
+        }
       </Grid>
     </>
   )
 }
 
-//
-//
 // <Grid container spacing={4}>
 //   {
 //     Object.keys(techSkills).map((key) => {
