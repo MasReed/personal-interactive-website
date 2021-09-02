@@ -218,7 +218,7 @@ export default function ProjectsContent() {
               gravitational dynamics. Used for public outreach
               and a first of its kind in the world. It was
               created with a team of undergraduate colleagues
-              during Dr. Hai Fu's astrophysics course.
+              during Dr. Hai Fu's 2016-2017 Astrophysics I & II courses.
             </Typography>
           </CardContent>
 

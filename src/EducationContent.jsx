@@ -10,11 +10,12 @@ import education from './content/education.json'
 
 const useStyles = makeStyles((theme) => ({
   dateText: {
-    color: theme.palette.white.main
+    color: theme.palette.white.main,
   },
   dividerStyle: {
     backgroundColor: theme.palette.secondary.main,
-    opacity: '50%'
+    minHeight: '1rem',
+    opacity: '65%',
   },
   eduDetails: {
     color: theme.palette.white.main,
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     textIndent: '2rem',
   },
   eduInstitute: {
-    color: theme.palette.cream.main
+    color: theme.palette.cream.main,
   },
   eduLink: {
     color: theme.palette.cream.main,
@@ -31,10 +32,10 @@ const useStyles = makeStyles((theme) => ({
       fontWeight: 'bold',
       letterSpacing: '0.085rem',
       textDecoration: 'none'
-    }
+    },
   },
   eduTile: {
-    padding: '1.25rem 0'
+    padding: '1.25rem 0',
   },
   eduTitle: {
     color: theme.palette.secondary.light,
