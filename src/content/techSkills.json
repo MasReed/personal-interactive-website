@@ -1,10 +1,25 @@
 {
   "languages": [
-    "Javascript/ECMAscript",
-    "MongoDB Query Language (MQL)",
-    "Python",
-    "HTML/CSS",
-    "SQL"
+    {
+      "language": "Javascript/ECMAscript",
+      "libraries": ["Node/EJS", "Express", "React/JSX", "Redux", "jQuery", "JSON"]
+    },
+    {
+      "language": "MongoDB Query Language (MQL)",
+      "libraries": ["MongoDB", "Mongoose", "MongoDB Atlas"]
+    },
+    {
+      "language": "Python",
+      "libraries": ["Pandas", "Django", "NumPy", "matplotlib"]
+    },
+    {
+      "language": "HTML/CSS",
+      "libraries": ["Bootstrap"]
+    },
+    {
+      "language": "SQL",
+      "libraries":["MySQL", "SQLite", "PostgreSQL"]
+    }
   ],
   "technologies": [
     "Git & Github",
