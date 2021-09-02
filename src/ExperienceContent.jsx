@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography'
 
 const useStyles = makeStyles((theme) => ({
   expTile: {
-    color: theme.palette.orange.main,
+    color: theme.palette.secondary.light,
     padding: '1.25rem 0'
   },
   expDate: {

@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.white.main
   },
   dividerStyle: {
-    backgroundColor: theme.palette.orange.main,
+    backgroundColor: theme.palette.secondary.main,
     opacity: '50%'
   },
   eduDetails: {
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '1.25rem 0'
   },
   eduTitle: {
-    color: theme.palette.orange.main
+    color: theme.palette.secondary.light
   },
 }))
 
@@ -43,11 +43,12 @@ export default function EducationContent() {
         education.map(entry => (
           <Box key={entry.institute} className={classes.eduTile}>
             <Grid container spacing={0}>
+              {/* Institute & Dates */}
               <Grid item sm={4}>
                 <Box display='flex' flexDirection='column' height='100%' justifyContent='space-between'>
                   <Box>
                     <Typography className={classes.eduInstitute} variant={'subtitle1'}>
-                      <strong>{entry.institute}</strong>
+                      {entry.institute}
                     </Typography>
                     <Typography className={classes.dateText} variant={'body2'}>
                       {entry.dates}
@@ -58,6 +59,8 @@ export default function EducationContent() {
                   </Box>
                 </Box>
               </Grid>
+
+              {/* Title, Description, Links */}
               <Grid item sm={8}>
                 {
                   entry.titles.map(title => (
