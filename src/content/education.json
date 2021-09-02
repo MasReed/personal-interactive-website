@@ -4,8 +4,10 @@
     "dates": "March 2021 - Present",
     "titles": [
       {
-        "title": "An introduction to modern web application development with Javascript",
-        "description": "Single page applications with ReactJS that use REST APIs built with Node.js. This covered testing, configuration and environment management, and the use of MongoDB for storing the application’s data. The course content is the same as in the Full stack course held at the Department of Computer Science at the University of Helsinki in Spring 2020.",
+        "title": "An Introduction to Modern Web Application Development with Javascript",
+        "description": [
+          "A focus on building full stack, single page applications, with ReactJS frontends and RESTful APIs built with NodeJS and the ExpressJS package on the backend. This covered testing, configuration and environment management, and the use of MongoDB and MongoDB Atlas for storing the application’s data. The course content is the same as in the Full stack course held at the Department of Computer Science at the University of Helsinki in Spring 2020. Next steps in my progression are learning GraphQL and React Native."
+        ],
         "link": {
           "href": "https://fullstackopen.com/en/about/",
           "text": "FullStackOpen"
@@ -19,7 +21,9 @@
     "titles": [
       {
         "title": "The Complete 2021 Web Development Bootcamp",
-        "description": "HTML5, CSS3, Bootstrap4, JavaScript, jQuery",
+        "description": [
+          "An initial delve into the basics of web development and full stack architecture by independently completing over 55 video-hours of content and many more hours of challenging, open-ended projcts. I developed several web applications using a MERN development stack, with technologies such as JavaScript, jQuery, JSON, HTML, CSS, MongoDB, and others. I was also able to gain an understanding of web architecture and the software development cycle during this process. Projects include a workflow tracker with React, a journaling app with OAuth 2.0 and database encryption, and many questionably themed static pages with Bootstrap or Material-ui."
+        ],
         "link": {
           "href": "https://www.udemy.com/course/the-complete-web-development-bootcamp/",
           "text": "Udemy Course"
@@ -33,7 +37,9 @@
     "titles": [
       {
         "title": "Data Analyst in Python",
-        "description": "Python, pandas, SQL",
+        "description": [
+          "A revisit to my programming roots, this was the first step for creating my career as a software developer and a good overlap from my undergraduate background. This course utilized Python with the pandas package, and Jupyter Notebook, to examine, analyize, and summarize over 16 various data sets. All the while allowing me to hone skills in data analysis, statistical methods, and technical writing while introducing SQL, command-line interfaces, and general computer science concepts for searching and sorting."
+        ],
         "link": {
           "href": "https://www.dataquest.io/path/data-analyst/",
           "text": "Data Analyst Path"
@@ -47,7 +53,11 @@
     "titles": [
       {
         "title": "Bachelors of Science - Astronomy; Physics",
-        "description": "Python, numpy, matplotlib, astropy, HTML, CSS",
+        "description": [
+          "Through class projects, curriculum, and research opportunities I learned a majority of my technical and social skills from the need to effectively communicate complex ideas, technical concepts, and detailed equations to mentors and peers. This occured through initiating weekly group study efforts during high work-load courses as well as documenting over 40 projects and assignments written with LaTeX (a markup language), most of which necessitated the use of programming as a problem solving tool.",
+
+          "Now technically my first exposure to programming was an electrical engineering course in C++ before switching into physics and astronomy, but the latter is where leveraging software engineering, specifically with Python and packages such as numpy and matplotlib, to do computational astrophysics seemed much quicker and more applicable. Natrually branching into other coursework in linear/matrix algebra, but also vector calculus, and even building a 2-Dimensional wave equation solver for quantum mechanics."
+        ],
         "link": {
           "href": "https://physics.uiowa.edu/undergraduate/bs-astronomy",
           "text": "Dept. of Physics and Astronomy"

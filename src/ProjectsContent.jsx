@@ -14,7 +14,10 @@ const useStyles = makeStyles((theme) => ({
   cardTheme: {
     backgroundColor: theme.palette.cream.main,
     boxShadow: theme.shadows[18],
-    color: 'primary'
+    color: 'primary',
+    '&:hover': {
+      boxShadow: theme.shadows[24],
+    }
   },
   cardImage: {
     height: 0,

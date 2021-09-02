@@ -17,19 +17,27 @@ const useStyles = makeStyles((theme) => ({
     opacity: '50%'
   },
   eduDetails: {
-    color: theme.palette.white.main
+    color: theme.palette.white.main,
+    textIndent: '2rem',
   },
   eduInstitute: {
     color: theme.palette.cream.main
   },
   eduLink: {
-    color: theme.palette.cream.main
+    color: theme.palette.cream.main,
+    '&:hover': {
+      color: theme.palette.orange.main,
+      fontWeight: 'bold',
+      letterSpacing: '0.085rem',
+      textDecoration: 'none'
+    }
   },
   eduTile: {
     padding: '1.25rem 0'
   },
   eduTitle: {
-    color: theme.palette.secondary.light
+    color: theme.palette.secondary.light,
+    margin: '0 0 .25rem 0'
   },
 }))
 
@@ -47,7 +55,7 @@ export default function EducationContent() {
               <Grid item sm={4}>
                 <Box display='flex' flexDirection='column' height='100%' justifyContent='space-between'>
                   <Box>
-                    <Typography className={classes.eduInstitute} variant={'subtitle1'}>
+                    <Typography className={classes.eduInstitute} variant={'h6'}>
                       {entry.institute}
                     </Typography>
                     <Typography className={classes.dateText} variant={'body2'}>
@@ -65,12 +73,16 @@ export default function EducationContent() {
                 {
                   entry.titles.map(title => (
                     <Box key={title.title}>
-                    <Typography className={classes.eduTitle} variant={'h6'}>
+                    <Typography className={classes.eduTitle} variant={'subtitle2'}>
                       {title.title}
                     </Typography>
-                    <Typography className={classes.eduDetails} variant={'body2'}>
-                      {title.description}
-                    </Typography>
+                    {
+                      title.description.map(paragraph => (
+                        <Typography className={classes.eduDetails} variant={'body2'}>
+                          {paragraph}
+                        </Typography>
+                      ))
+                    }
                     <Link
                       className={classes.eduLink}
                       href={title.link.href}
