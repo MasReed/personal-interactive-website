@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   eduDetails: {
     color: theme.palette.white.main,
+    padding: '.25rem 0',
     textIndent: '2rem',
   },
   eduInstitute: {
@@ -37,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
   eduTitle: {
     color: theme.palette.secondary.light,
-    margin: '0 0 .25rem 0'
+    padding: '.25rem 0',
   },
 }))
 
@@ -73,25 +74,25 @@ export default function EducationContent() {
                 {
                   entry.titles.map(title => (
                     <Box key={title.title}>
-                    <Typography className={classes.eduTitle} variant={'subtitle2'}>
-                      {title.title}
-                    </Typography>
-                    {
-                      title.description.map(paragraph => (
-                        <Typography className={classes.eduDetails} variant={'body2'}>
-                          {paragraph}
-                        </Typography>
-                      ))
-                    }
-                    <Link
-                      className={classes.eduLink}
-                      href={title.link.href}
-                      target='_blank'
-                      rel='noopener'
-                      variant='overline'
-                    >
-                      {title.link.text}
-                    </Link>
+                      <Typography className={classes.eduTitle} variant={'subtitle2'}>
+                        {title.title}
+                      </Typography>
+                      {
+                        title.description.map(paragraph => (
+                          <Typography className={classes.eduDetails} variant={'body2'}>
+                            {paragraph}
+                          </Typography>
+                        ))
+                      }
+                      <Link
+                        className={classes.eduLink}
+                        href={title.link.href}
+                        target='_blank'
+                        rel='noopener'
+                        variant='overline'
+                      >
+                        {title.link.text}
+                      </Link>
                     </Box>
                   ))
                 }

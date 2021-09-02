@@ -56,7 +56,7 @@
         "description": [
           "Through class projects, curriculum, and research opportunities I learned a majority of my technical and social skills from the need to effectively communicate complex ideas, technical concepts, and detailed equations to mentors and peers. This occured through initiating weekly group study efforts during high work-load courses as well as documenting over 40 projects and assignments written with LaTeX (a markup language), most of which necessitated the use of programming as a problem solving tool.",
 
-          "Now technically my first exposure to programming was an electrical engineering course in C++ before switching into physics and astronomy, but the latter is where leveraging software engineering, specifically with Python and packages such as numpy and matplotlib, to do computational astrophysics seemed much quicker and more applicable. Natrually branching into other coursework in linear/matrix algebra, but also vector calculus, and even building a 2-Dimensional wave equation solver for quantum mechanics."
+          "Now technically my first exposure to programming was an electrical engineering course in C++ before switching into physics and astronomy. The latter is where leveraging software engineering, specifically with Python, to do computational astrophysics seemed much quicker and more applicable. This natrually branched into other coursework in linear/matrix algebra, but also into vector calculus, and even building a 2-Dimensional wave equation solver for quantum mechanics."
         ],
         "link": {
           "href": "https://physics.uiowa.edu/undergraduate/bs-astronomy",
