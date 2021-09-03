@@ -20,15 +20,15 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.cream.main,
   },
   navActive: {
-    backgroundColor: theme.palette.secondary.light,
-    color: theme.palette.primary.dark,
+    backgroundColor: theme.palette.secondary.main,
+    color: theme.palette.primary.main,
     boxShadow: theme.shadows[24],
     padding: '1rem',
     '&:hover': {
       backgroundColor: theme.palette.white.main,
       border: '0.0125rem solid',
       borderColor: theme.palette.text.primary,
-      color: theme.palette.primary.dark,
+      color: theme.palette.primary.main,
       padding: '1.15rem 1rem',
     }
   },
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.white.main,
       border: '0.0125rem solid',
       borderColor: theme.palette.text.primary,
-      color: theme.palette.primary.dark,
+      color: theme.palette.primary.main,
       padding: '1.15rem 1rem',
     }
   },

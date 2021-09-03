@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   altLinkText: {
     color: theme.palette.primary.main,
     '&:hover': {
-      color: theme.palette.orange.main,
+      color: theme.palette.secondary.main,
       fontWeight: 'bold',
       letterSpacing: '0.085rem',
       textDecoration: 'none'
@@ -30,8 +30,11 @@ const useStyles = makeStyles((theme) => ({
     margin: '1rem 1rem 0',
   },
   submitButton: {
-    color: theme.palette.primary.dark,
-    backgroundColor: theme.palette.orange.main,
+    color: theme.palette.primary.main,
+    backgroundColor: theme.palette.secondary.main,
+    '&:hover': {
+      backgroundColor: theme.palette.white.main,
+    }
   },
   callToActionTextArea: {
     color: theme.palette.text.primary,
@@ -159,7 +162,7 @@ export default function ContactForm() {
             <Grid item xs={false} sm={2}>
               <Typography
                 align='center'
-                style={{ color: theme.palette.purple.main + '7F', padding: '.25rem 0' }}
+                style={{ color: theme.palette.primary.main + '7F', padding: '.25rem 0' }}
                 variant='h6'
               >
                 -

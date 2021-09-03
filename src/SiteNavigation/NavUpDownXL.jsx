@@ -11,8 +11,8 @@ import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
 const useStyles = makeStyles((theme) => ({
   buttonStyle: {
     padding: '1rem 0',
-    backgroundColor: theme.palette.secondary.light,
-    color: theme.palette.primary.dark,
+    backgroundColor: theme.palette.secondary.main,
+    color: theme.palette.primary.main,
     '&:hover': {
       backgroundColor: theme.palette.white.main,
       color: theme.palette.primary.main,

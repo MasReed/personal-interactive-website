@@ -15,13 +15,8 @@ const useStyle = makeStyles((theme) => ({
     margin: '3rem 0',
     padding: '0 2rem'
   },
-  footerBox: {
-    backgroundColor: theme.palette.orange.main,
-    margin: '2rem 0',
-    padding: '2rem'
-  },
   footerStyle: {
-    backgroundColor: theme.palette.orange.main,
+    backgroundColor: theme.palette.secondary.main,
     margin: 0,
     padding: '2rem 0'
   },

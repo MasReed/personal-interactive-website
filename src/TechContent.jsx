@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '.5rem 0',
   },
   listItemStyle: {
-    backgroundColor: theme.palette.secondary.light,
+    backgroundColor: theme.palette.secondary.main,
     boxShadow: theme.shadows[4],
     color: theme.palette.text.primary,
     '&:hover': {

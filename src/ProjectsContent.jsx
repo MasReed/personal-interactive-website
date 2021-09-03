@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   cardLink: {
     color: 'primary',
     '&:hover': {
-      color: theme.palette.orange.main,
+      color: theme.palette.secondary.main,
       fontWeight: 'bold',
       letterSpacing: '0.085rem',
       textDecoration: 'none'

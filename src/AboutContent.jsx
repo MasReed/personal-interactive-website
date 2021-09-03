@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   detailItemBox: {
     margin: '0 0 1.1rem 0'
   },
-  dividerMargins: {
+  dividerStyle: {
     backgroundColor:' rgba(29, 27, 30, 0.15)',
     margin: '2rem 0'
   },
@@ -55,7 +55,7 @@ export default function AboutContent() {
           <Box className={classes.aboutGridItemPadding}>
             <Typography color='primary' variant='h3'>About Me</Typography>
 
-            <Divider className={classes.dividerMargins} />
+            <Divider className={classes.dividerStyle} />
 
             {/* Personal Statement */}
             <Typography color='primary' variant='body1'>
@@ -122,7 +122,7 @@ export default function AboutContent() {
         <Box display='flex' flexDirection='column' height='100%' justifyContent='space-between'>
           <Box className={classes.aboutGridItemPadding}>
             <Typography color='primary' variant='h3'>Details</Typography>
-            <Divider className={classes.dividerMargins} />
+            <Divider className={classes.dividerStyle} />
 
             {/* Name */}
             <Box className={classes.detailItemBox}>

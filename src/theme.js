@@ -1,32 +1,45 @@
 import { createTheme } from '@material-ui/core/styles'
 
-// const purple = '#282638'
+// const purple = '#514e62'
 // const orange = '#ea5e42'
 // const cream = '#f5cdaa'
 // const gray = '#49464d'
 // const white = '#EBF2FF'
 
+// const bluegray ='#2c394b'
+//* const green = '#334756'
+// const maroon = '#845460'
+
+// const newOrange = '#ff8f5d'
+// const black = '#000000'
+// const red = '#bd4b4b'
+//* const salmon = '#efb7b7'
+
+
+// periwinkle
+// primary: {
+//   light: '#a79fbe',
+//   main: '#78718e',
+//   dark: '#4c4661',
+//   contrastText: '#EBF2FF'
+// },
+
+
 const theme = createTheme({
   palette: {
     primary: {
-      light: '#727a8f',
-      main: '#514e62',
-      dark: '#282638',
+      light: '#5e7283',
+      main: '#334756',
+      dark: '#0a202d',
       contrastText: '#EBF2FF'
     },
     secondary: {
-      light: '#ff8f6e',
-      main: '#ea5e42',
-      dark: '#b12b18',
+      light: '#efb7b7',
+      main: '#ff8f5d',
+      dark: '#ea5e42',
       contrastText: '#000000DE'
     },
     divider: 'rgba(29, 27, 30, 0.25)',
-    purple: {
-      main: '#282638'
-    },
-    orange: {
-      main: '#ff8f6e'
-    },
     cream: {
       main: '#f5cdaa'
     },

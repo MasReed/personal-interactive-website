@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   eduLink: {
     color: theme.palette.cream.main,
     '&:hover': {
-      color: theme.palette.orange.main,
+      color: theme.palette.secondary.main,
       fontWeight: 'bold',
       letterSpacing: '0.085rem',
       textDecoration: 'none'
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '1.25rem 0',
   },
   eduTitle: {
-    color: theme.palette.secondary.light,
+    color: theme.palette.secondary.main,
     padding: '.25rem 0',
   },
 }))
