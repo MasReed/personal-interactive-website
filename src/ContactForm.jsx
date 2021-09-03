@@ -85,13 +85,13 @@ export default function ContactForm() {
         <Alert severity='success' color='info'>Thank you reaching out!</Alert>
       </Snackbar>
 
-      <Box pb={3}>
+      <Box pb={2}>
         <Typography color='primary' variant='h3'>
           <strong>Hey, you...</strong> Thanks for checking out my website!
         </Typography>
 
         <Box className={classes.callToActionTextArea}>
-          <Box pt={0}>
+          <Box pt={1}>
             <Typography variant='body2'>
               Looking for my resume?&nbsp;
               {<Link
@@ -104,7 +104,7 @@ export default function ContactForm() {
             </Typography>
           </Box>
 
-          <Box pt={2}>
+          <Box pt={3}>
             <Typography color='primary' variant='subtitle1'>
               Have a suggestion or want to connect? Leave me a message below!
             </Typography>
