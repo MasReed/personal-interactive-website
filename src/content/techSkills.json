@@ -1,22 +1,27 @@
 {
   "languages": [
     {
+      "id": "javascript",
       "language": "Javascript/ECMAscript",
       "libraries": ["Node/EJS", "Express", "React/JSX", "Redux", "jQuery", "JSON"]
     },
     {
-      "language": "MongoDB Query Language",
-      "libraries": ["MongoDB", "Mongoose", "MongoDB Atlas"]
-    },
-    {
-      "language": "Python",
-      "libraries": ["Pandas", "Django", "NumPy", "matplotlib"]
-    },
-    {
+      "id": "htmlcss",
       "language": "HTML/CSS",
       "libraries": ["Bootstrap"]
     },
     {
+      "id": "mql",
+      "language": "MongoDB Query Language",
+      "libraries": ["MongoDB", "Mongoose", "MongoDB Atlas"]
+    },
+    {
+      "id": "python",
+      "language": "Python",
+      "libraries": ["Pandas", "Django", "NumPy", "matplotlib"]
+    },
+    {
+      "id": "sql",
       "language": "SQL",
       "libraries":["MySQL", "SQLite", "PostgreSQL"]
     }
@@ -29,11 +34,11 @@
     "Heroku"
   ],
   "utilities": [
+    "Postman",
     "MS Office 365 Suite",
     "Teams/Zoom",
     "Slack/Discord",
-    "LateX",
-    "Markdown"
+    "LateX/Markdown"
   ],
   "other": [
     "Arduino",

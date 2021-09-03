@@ -20,24 +20,28 @@ const useStyles = makeStyles((theme) => ({
     padding: '.5rem 0',
   },
   listItemStyle: {
-    backgroundColor: '#49464d',
-    borderRadius: 3,
-    border: '1px solid #ea5e42',
-    color: '#EBF2FF',
-    margin: '1px 0'
+    backgroundColor: theme.palette.secondary.light,
+    color: theme.palette.text.primary,
+    '&:hover': {
+      backgroundColor: theme.palette.white.main,
+      border: '0.0125rem solid',
+      borderColor: theme.palette.text.primary,
+    }
   },
   listStyle: {
     color: theme.palette.white.main,
     margin: 0,
     padding: 0,
   },
-  nestedListItem: {
-    color: theme.palette.white.main,
+  expandedListItem: {
+    backgroundColor: theme.palette.cream.main,
+    border: '0.0125rem solid',
+    borderColor: theme.palette.primary.main,
+    boxShadow: theme.shadows[24],
     margin: 0,
-    padding: '0 .75rem',
   },
-  nestedListText: {
-    color: theme.palette.white.main,
+  expandedListText: {
+    color: theme.palette.text.primary,
     margin: 0,
     padding: 0,
   },
@@ -47,14 +51,19 @@ export default function TechContent() {
   const theme = useTheme()
   const classes = useStyles(theme)
 
-  const [open, setOpen] = useState(false)
-
-  const handleClick = (event) => {
-    console.log(event)
-    setOpen(!open)
-  }
-
   const languages = techSkills['languages']
+
+  const [open, setOpen] = useState({
+    "javascript": false,
+    "htmlcss": false,
+    "mql": false,
+    "python": false,
+    "sql": false
+  })
+
+  const handleClick = (id) => {
+    setOpen({ ...open, [id]: !open[id] })
+  }
 
   return (
     <>
@@ -69,20 +78,22 @@ export default function TechContent() {
           {
             languages.map(language => (
               <List
-                key={language}
+                key={language.language}
                 component='nav'
                 className={classes.listStyle}
               >
-                <ListItem button className={classes.listItemStyle} onClick={handleClick}>
+                <ListItem button className={classes.listItemStyle} onClick={() => handleClick(language.id)}>
                   <ListItemText primary={language.language} />
-                  {open ? <ExpandLess /> : <ExpandMore />}
+                  {open[language.id] ? <ExpandLess /> : <ExpandMore />}
                 </ListItem>
-                <Collapse in={open} timeout='auto' unmountOnExit>
-                  <Box className={classes.listItemStyle}>
-                    <ul>
+                <Collapse in={open[language.id]} timeout='auto' unmountOnExit>
+                  <Box className={classes.expandedListItem}>
+                    <ul style={{ margin: 0, padding: '.5rem 2.5rem' }}>
                       {
                         language.libraries.map(lib => (
-                          <li key={lib}>{lib}</li>
+                          <Typography key={lib} className={classes.expandedListText} component='li' variant='body2'>
+                            {lib}
+                          </Typography>
                         ))
                       }
                     </ul>
@@ -122,27 +133,3 @@ export default function TechContent() {
     </>
   )
 }
-
-// <Grid container spacing={4}>
-//   {
-//     Object.keys(techSkills).map((key) => {
-//       return (
-//         <Grid item sm={3} key={key}>
-//           <h2 className={classes.heading}>{key[0].toUpperCase() + key.slice(1)}</h2>
-//           <List>
-//             {
-//               techSkills[key].map(item => (
-//                 <ListItem
-//                   key={item.toString()}
-//                   className={classes.listItemStyle}
-//                 >
-//                   {item}
-//                 </ListItem>
-//               ))
-//             }
-//           </List>
-//         </Grid>
-//       )
-//     })
-//   }
-// </Grid>
