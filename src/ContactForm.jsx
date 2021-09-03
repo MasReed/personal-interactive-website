@@ -33,6 +33,10 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.dark,
     backgroundColor: theme.palette.orange.main,
   },
+  callToActionTextArea: {
+    color: theme.palette.text.primary,
+    margin: '.5rem 1rem 0',
+  }
 }))
 
 export default function ContactForm() {
@@ -82,21 +86,29 @@ export default function ContactForm() {
       </Snackbar>
 
       <Box pb={3}>
-        <Typography color='primary' variant='h4'>
-          Leave a message!
+        <Typography color='primary' variant='h3'>
+          <strong>Hey, you...</strong> Thanks for checking out my website!
         </Typography>
 
-        <Box className={classes.submitSection}>
-          <Typography variant='caption'>
-            Looking for my resume? You can download it&nbsp;
-            {<Link
-              className={classes.altLinkText}
-              download
-              href='Mason Reed Full Stack Developer Resume.pdf'
-            >
-              here
-            </Link>}.
-          </Typography>
+        <Box className={classes.callToActionTextArea}>
+          <Box pt={0}>
+            <Typography variant='body2'>
+              Looking for my resume?&nbsp;
+              {<Link
+                className={classes.altLinkText}
+                download
+                href='Mason Reed Full Stack Developer Resume.pdf'
+              >
+                You can download it here
+              </Link>}.
+            </Typography>
+          </Box>
+
+          <Box pt={2}>
+            <Typography color='primary' variant='subtitle1'>
+              Have a suggestion or want to connect? Leave me a message below!
+            </Typography>
+          </Box>
         </Box>
       </Box>
 
