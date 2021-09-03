@@ -22,7 +22,6 @@ function App() {
       direction='column'
       style={{ minHeight: '100vh' }}
     >
-
       <SiteNavigation />
 
       <header id='top' >

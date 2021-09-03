@@ -5,7 +5,7 @@
       "libraries": ["Node/EJS", "Express", "React/JSX", "Redux", "jQuery", "JSON"]
     },
     {
-      "language": "MongoDB Query Language (MQL)",
+      "language": "MongoDB Query Language",
       "libraries": ["MongoDB", "Mongoose", "MongoDB Atlas"]
     },
     {

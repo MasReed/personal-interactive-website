@@ -80,7 +80,7 @@ export default function EducationContent() {
                       </Typography>
                       {
                         title.description.map(paragraph => (
-                          <Typography className={classes.eduDetails} variant={'body2'}>
+                          <Typography key={paragraph.slice(-20)} className={classes.eduDetails} variant='body2'>
                             {paragraph}
                           </Typography>
                         ))
