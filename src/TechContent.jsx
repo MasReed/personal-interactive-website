@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   listItemStyle: {
     backgroundColor: theme.palette.secondary.light,
+    boxShadow: theme.shadows[4],
     color: theme.palette.text.primary,
     '&:hover': {
       backgroundColor: theme.palette.white.main,
@@ -30,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
   listStyle: {
     color: theme.palette.white.main,
+    boxShadow: theme.shadows[4],
     margin: 0,
     padding: 0,
   },

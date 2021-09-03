@@ -26,6 +26,8 @@ const useStyles = makeStyles((theme) => ({
     padding: '1rem',
     '&:hover': {
       backgroundColor: theme.palette.white.main,
+      border: '0.0125rem solid',
+      borderColor: theme.palette.text.primary,
       color: theme.palette.primary.dark,
       padding: '1.15rem 1rem',
     }
@@ -36,6 +38,8 @@ const useStyles = makeStyles((theme) => ({
     padding: '1rem',
     '&:hover': {
       backgroundColor: theme.palette.white.main,
+      border: '0.0125rem solid',
+      borderColor: theme.palette.text.primary,
       color: theme.palette.primary.dark,
       padding: '1.15rem 1rem',
     }
