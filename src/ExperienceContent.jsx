@@ -79,14 +79,12 @@ export default function ExperienceContent() {
 
         {/* Title, Description, Links */}
         <Grid item sm={8}>
-          <Box>
-            <Typography className={classes.expTitle} variant={'subtitle2'}>
-              Robotics Educator
-            </Typography>
-            <Typography className={classes.expDetails} variant={'body2'}>
-              An expoloration in STEM outreach and secondary K-8th grade education that included curriculum development, remote content delivery, and leading professional development seminars. Introductory programming courses were taught in Python, Arduino, RobotC, and Unreal Engine 4; all of which necessitated strong mentor-mentee and speaker-audience communication.
-            </Typography>
-          </Box>
+          <Typography className={classes.expTitle} variant={'subtitle2'}>
+            Robotics Educator
+          </Typography>
+          <Typography className={classes.expDetails} variant={'body2'}>
+            An expoloration in STEM outreach and secondary K-8th grade education that included curriculum development, remote content delivery, and leading professional development seminars. Introductory programming courses were taught in Python, Arduino, RobotC, and Unreal Engine 4; all of which necessitated strong mentor-mentee and speaker-audience communication.
+          </Typography>
         </Grid>
       </Grid>
 
@@ -115,23 +113,21 @@ export default function ExperienceContent() {
 
         <Grid item sm={8}>
           {/* Title, Description, Links */}
-          <Box>
-            <Typography className={classes.expTitle} variant={'subtitle2'}>
-              Research Assistant
-            </Typography>
-            <Typography className={classes.expDetails} variant={'body2'}>
-              Expanded our creation of the world's first augmented reality (AR) sandbox for gravitational dynamics, dubbed 'Gravbox', to meet extended research goals. This included creating a simple static website with HTML and CSS to document our opensource project for the world. It was adapted from a project on real-time water flow simulation and was written in Python. This research project cemented a love for programming, development, and teamwork.
-            </Typography>
-            <Link
-              className={classes.expLink}
-              href='http://astro.physics.uiowa.edu/gravbox'
-              target='_blank'
-              rel='noopener'
-              variant='overline'
-            >
-              Gravbox
-            </Link>
-          </Box>
+          <Typography className={classes.expTitle} variant={'subtitle2'}>
+            Research Assistant
+          </Typography>
+          <Typography className={classes.expDetails} variant={'body2'}>
+            Expanded our creation of the world's first augmented reality (AR) sandbox for gravitational dynamics, dubbed 'Gravbox', to meet extended research goals. This included creating a simple static website with HTML and CSS to document our opensource project for the world. It was adapted from a project on real-time water flow simulation and was written in Python. This research project cemented a love for programming, development, and teamwork.
+          </Typography>
+          <Link
+            className={classes.expLink}
+            href='http://astro.physics.uiowa.edu/gravbox'
+            target='_blank'
+            rel='noopener'
+            variant='overline'
+          >
+            Gravbox
+          </Link>
         </Grid>
       </Grid>
     </>
