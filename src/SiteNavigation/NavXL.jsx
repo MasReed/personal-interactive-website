@@ -94,7 +94,7 @@ export default function NavXL() {
   }, [])
 
   return (
-    <Box className={classes.navPosition}>
+    <Box className={classes.navPosition} zIndex='tooltip'>
       <Paper className={classes.navColor} elevation={24} variant='elevation'>
         <MenuList>
           <NavUpDownXL
