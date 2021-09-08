@@ -73,7 +73,10 @@ export default function NavLG({ sectionInfo, navLocation, setNavLocation }) {
           ? <KeyboardArrowUpIcon fontSize='large' />
           : <KeyboardArrowDownIcon fontSize='large' />
       }
-      {sectionInfo.find(section => section.id !== '' && section.id === nextSection).title}
+      {
+        sectionInfo.find(section => section.id && section.id === nextSection)
+          && sectionInfo.find(section => section.id && section.id === nextSection).title
+      }
     </Fab>
   )
 }
