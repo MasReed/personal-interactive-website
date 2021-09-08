@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
@@ -50,48 +50,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function NavXL() {
+export default function NavXL({ sectionInfo, navLocation, setNavLocation }) {
   const theme = useTheme()
   const classes = useStyles(theme)
-  const [navLocation, setNavLocation] = useState('')
-
-  // id is used as href, title used as navigation text
-  const sectionInfo = [
-    {
-      id: '#about',
-      title: 'About'
-    },
-    {
-      id: '#tech-skills',
-      title: 'Skills'
-    },
-    {
-      id: '#projects',
-      title: 'Projects'
-    },
-    {
-      id: '#education',
-      title: 'Education'
-    },
-    {
-      id: '#experience',
-      title: 'Experience'
-    },
-    {
-      id: '#contact',
-      title: 'Contact'
-    },
-  ]
-
-  // Handles EventListener for changes to location.hash
-  useEffect(() => {
-    const hashListener = () => {
-      setNavLocation(window.location.hash)
-    }
-    window.addEventListener('hashchange', hashListener, false)
-
-    return () => window.removeEventListener('hashchange', hashListener)
-  }, [])
 
   return (
     <Box className={classes.navPosition} zIndex='tooltip'>

@@ -41,7 +41,7 @@ export default function NavUpDownXL({ sections, navLocation }) {
     const nextSectionRef = sectionIds[nextSectionIndex]
 
     if (!nextSectionRef) {
-      setNextSection('#top')
+      setNextSection(sectionIds[0])
       setAtBottom(true)
     } else {
       setNextSection(nextSectionRef)
