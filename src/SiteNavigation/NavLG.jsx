@@ -16,6 +16,8 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main,
     border: '0.0125rem solid',
     borderColor: theme.palette.primary.main,
+    boxShadow: theme.shadows[24],
+    zIndex: 1000,
     '&:active': {
       backgroundColor: theme.palette.cream.main,
       color: theme.palette.primary.main,

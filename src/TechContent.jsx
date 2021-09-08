@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.cream.main,
     border: '0.0125rem solid',
     borderColor: theme.palette.primary.main,
-    boxShadow: theme.shadows[24],
+    boxShadow: theme.shadows[23],
     margin: 0,
   },
   expandedListText: {
