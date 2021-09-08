@@ -42,7 +42,7 @@ export default function NavLG({ sectionInfo, navLocation, setNavLocation }) {
   const executeScroll = () => {
     linkRef.current.scrollIntoView({
       behavior: 'smooth',
-      block: 'nearest',
+      block: 'start',
       inline: 'nearest'
     })
   }
