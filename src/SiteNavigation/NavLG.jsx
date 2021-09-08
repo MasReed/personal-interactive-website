@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Fab from '@material-ui/core/Fab'
 
@@ -12,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   fabNav: {
     position: 'fixed',
     right: '5%',
-    top: '85%',
+    bottom: '5%',
     color: theme.palette.primary.main,
     border: '0.0125rem solid',
     borderColor: theme.palette.primary.main,
@@ -39,7 +40,11 @@ export default function NavLG({ sectionInfo, navLocation, setNavLocation }) {
   // Move to selected section on click
   const linkRef = useRef(null)
   const executeScroll = () => {
-    linkRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    linkRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'nearest'
+    })
   }
 
   useEffect(() => {
@@ -64,7 +69,7 @@ export default function NavLG({ sectionInfo, navLocation, setNavLocation }) {
       color='secondary'
       component={Link}
       href={nextSection}
-      variant='extended'
+      variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'extended' : 'circular'}
       ref={linkRef}
       onClick={executeScroll}
     >
@@ -74,8 +79,10 @@ export default function NavLG({ sectionInfo, navLocation, setNavLocation }) {
           : <KeyboardArrowDownIcon fontSize='large' />
       }
       {
-        sectionInfo.find(section => section.id && section.id === nextSection)
+        useMediaQuery(theme.breakpoints.up('sm'))
+        ? sectionInfo.find(section => section.id && section.id === nextSection)
           && sectionInfo.find(section => section.id && section.id === nextSection).title
+        : null
       }
     </Fab>
   )
