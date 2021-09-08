@@ -68,70 +68,69 @@ export default function TechContent() {
   }
 
   return (
-    <>
-      <Grid container spacing={4}>
-        <Grid item xs={12} sm={3}>
-          {/* Languages Title */}
-          <Typography className={classes.heading} variant='h5'>
-            {Object.keys(techSkills)[0][0].toUpperCase() + Object.keys(techSkills)[0].slice(1)}
-          </Typography>
+    <Grid container spacing={4}>
+      <Grid item xs={12} sm={3}>
+        {/* Languages Title */}
+        <Typography className={classes.heading} variant='h5'>
+          {Object.keys(techSkills)[0][0].toUpperCase() + Object.keys(techSkills)[0].slice(1)}
+        </Typography>
 
-          {/* Languagues Dropdown Menus */}
-          {
-            languages.map(language => (
-              <List
-                key={language.language}
-                component='nav'
-                className={classes.listStyle}
-              >
-                <ListItem button className={classes.listItemStyle} onClick={() => handleClick(language.id)}>
-                  <ListItemText primary={language.language} />
-                  {open[language.id] ? <ExpandLess /> : <ExpandMore />}
-                </ListItem>
-                <Collapse in={open[language.id]} timeout='auto' unmountOnExit>
-                  <Box className={classes.expandedListItem}>
-                    <ul style={{ margin: 0, padding: '.5rem 2.5rem' }}>
-                      {
-                        language.libraries.map(lib => (
-                          <Typography key={lib} className={classes.expandedListText} component='li' variant='body2'>
-                            {lib}
-                          </Typography>
-                        ))
-                      }
-                    </ul>
-                  </Box>
-                </Collapse>
-              </List>
-            ))
-          }
-
-        </Grid>
-
-        {/* Regular Lists and Items */}
+        {/* Languagues Dropdown Menus */}
         {
-          Object.keys(techSkills).slice(1).map((key) => {
-            return (
-              <Grid item xs={12} sm={3} key={key}>
-                <Typography className={classes.heading} variant='h5'>
-                  {key[0].toUpperCase() + key.slice(1)}
-                </Typography>
-                <List className={classes.listStyle}>
-                  {
-                    techSkills[key].map(item => (
-                      <ListItem
-                        key={item}
-                        className={classes.listItemStyle}
-                      >
-                        <ListItemText primary={item} />
-                      </ListItem>
-                    ))
-                  }
-                </List>
-              </Grid>
-            )
-          })
+          languages.map(language => (
+            <List
+              key={language.language}
+              component='nav'
+              className={classes.listStyle}
+            >
+              <ListItem button className={classes.listItemStyle} onClick={() => handleClick(language.id)}>
+                <ListItemText primary={language.language} />
+                {open[language.id] ? <ExpandLess /> : <ExpandMore />}
+              </ListItem>
+              <Collapse in={open[language.id]} timeout='auto' unmountOnExit>
+                <Box className={classes.expandedListItem}>
+                  <ul style={{ margin: 0, padding: '.5rem 2.5rem' }}>
+                    {
+                      language.libraries.map(lib => (
+                        <Typography key={lib} className={classes.expandedListText} component='li' variant='body2'>
+                          {lib}
+                        </Typography>
+                      ))
+                    }
+                  </ul>
+                </Box>
+              </Collapse>
+            </List>
+          ))
         }
+
       </Grid>
-    </>
+
+      {/* Regular Lists and Items */}
+      {
+        Object.keys(techSkills).slice(1).map((key) => {
+          return (
+            <Grid item xs={12} sm={3} key={key}>
+              <Typography className={classes.heading} variant='h5'>
+                {key[0].toUpperCase() + key.slice(1)}
+              </Typography>
+              <List className={classes.listStyle}>
+                {
+                  techSkills[key].map(item => (
+                    <ListItem
+                      key={item}
+                      className={classes.listItemStyle}
+                    >
+                      <ListItemText primary={item} />
+                    </ListItem>
+                  ))
+                }
+              </List>
+            </Grid>
+          )
+        })
+      }
+    </Grid>
+
   )
 }

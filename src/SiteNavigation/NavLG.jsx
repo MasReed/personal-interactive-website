@@ -34,7 +34,7 @@ export default function NavLG({ sectionInfo, navLocation, setNavLocation }) {
   const classes = useStyles(theme)
 
   const sectionIds = sectionInfo.map(section => section.id)
-  const [nextSection, setNextSection] = useState(window.location.hash)
+  const [nextSection, setNextSection] = useState('')
   const [atBottom, setAtBottom] = useState(false)
 
   // Move to selected section on click
