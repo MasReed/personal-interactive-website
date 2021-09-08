@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ValidationError, useForm } from '@formspree/react'
-
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Alert from '@material-ui/lab/Alert'
 import Box from '@material-ui/core/Box'
@@ -159,14 +159,19 @@ export default function ContactForm() {
             </Grid>
 
             {/* Decorative Spacing Element */}
-            <Grid item xs={false} sm={2}>
-              <Typography
-                align='center'
-                style={{ color: theme.palette.primary.main + '7F', padding: '.25rem 0' }}
-                variant='h6'
-              >
-                -
-              </Typography>
+            <Grid item xs={12} sm={2}>
+              {
+                useMediaQuery(theme.breakpoints.up('lg'))
+                ?
+                  <Typography
+                    align='center'
+                    style={{ color: theme.palette.primary.main + '7F', padding: '.25rem 0' }}
+                    variant='h6'
+                  >
+                    -
+                  </Typography>
+                : <Box pt={'1.25rem'}></Box>
+              }
             </Grid>
 
             {/* Contact Phone */}
