@@ -19,45 +19,19 @@ const useStyles = makeStyles((theme) => ({
     '&:active': {
       backgroundColor: theme.palette.cream.main,
       color: theme.palette.primary.main,
-    }
+    },
+    '&:hover': {
+      backgroundColor: theme.palette.cream.main
+    },
   },
 }))
 
-export default function NavLG() {
+export default function NavLG({ sectionInfo, navLocation, setNavLocation }) {
   const theme = useTheme()
   const classes = useStyles(theme)
-  const [navLocation, setNavLocation] = useState('')
-
-  // id is used as href, title used as navigation text
-  const sectionInfo = [
-    {
-      id: '#about',
-      title: 'About'
-    },
-    {
-      id: '#tech-skills',
-      title: 'Skills'
-    },
-    {
-      id: '#projects',
-      title: 'Projects'
-    },
-    {
-      id: '#education',
-      title: 'Education'
-    },
-    {
-      id: '#experience',
-      title: 'Experience'
-    },
-    {
-      id: '#contact',
-      title: 'Contact'
-    },
-  ]
 
   const sectionIds = sectionInfo.map(section => section.id)
-  const [nextSection, setNextSection] = useState('')
+  const [nextSection, setNextSection] = useState(window.location.hash)
   const [atBottom, setAtBottom] = useState(false)
 
   // Move to selected section on click
@@ -72,7 +46,7 @@ export default function NavLG() {
     const nextSectionRef = sectionIds[nextSectionIndex]
 
     if (!nextSectionRef) {
-      setNextSection('#top')
+      setNextSection(sectionIds[0])
       setAtBottom(true)
     } else {
       setNextSection(nextSectionRef)
@@ -80,17 +54,6 @@ export default function NavLG() {
     }
 
   }, [sectionIds, navLocation])
-
-
-  // Handles EventListener for changes to location.hash
-  useEffect(() => {
-    const hashListener = () => {
-      setNavLocation(window.location.hash)
-    }
-    window.addEventListener('hashchange', hashListener, false)
-
-    return () => window.removeEventListener('hashchange', hashListener)
-  }, [])
 
   return (
     <Fab
@@ -108,7 +71,7 @@ export default function NavLG() {
           ? <KeyboardArrowUpIcon fontSize='large' />
           : <KeyboardArrowDownIcon fontSize='large' />
       }
-      {nextSection}
+      {sectionInfo.find(section => section.id !== '' && section.id === nextSection).title}
     </Fab>
   )
 }
