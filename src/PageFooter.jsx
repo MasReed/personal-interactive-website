@@ -13,7 +13,11 @@ import sectionInfo from './content/sectionInfo.json'
 const useStyle = makeStyles((theme) => ({
   contentSpacingStyle: {
     margin: '3rem 0',
-    padding: '0 2rem'
+    padding: '0 2rem',
+    [theme.breakpoints.down('sm')]: {
+      margin: '1rem 0',
+      padding: '0 1rem',
+    },
   },
   footerStyle: {
     backgroundColor: theme.palette.secondary.main,

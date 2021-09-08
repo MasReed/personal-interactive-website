@@ -16,6 +16,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
     minHeight: '1rem',
     opacity: '65%',
+    orientation: 'horizontal',
+    [theme.breakpoints.down('sm')]: {
+      minHeight: '2rem'
+    },
   },
   eduDetails: {
     color: theme.palette.white.main,
@@ -54,7 +58,7 @@ export default function EducationContent() {
           <Box key={entry.institute} className={classes.eduTile}>
             <Grid container spacing={0}>
               {/* Institute & Dates */}
-              <Grid item sm={4}>
+              <Grid item xs={12} sm={4}>
                 <Box display='flex' flexDirection='column' height='100%' justifyContent='space-between'>
                   <Box>
                     <Typography className={classes.eduInstitute} variant={'h6'}>
@@ -71,7 +75,7 @@ export default function EducationContent() {
               </Grid>
 
               {/* Title, Description, Links */}
-              <Grid item sm={8}>
+              <Grid item xs={12} sm={8}>
                 {
                   entry.titles.map(title => (
                     <Box key={title.title}>

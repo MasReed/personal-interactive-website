@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.primary.main,
     minHeight: '1rem',
     opacity: '65%',
+    [theme.breakpoints.down('sm')]: {
+      minHeight: '2rem'
+    },
   },
   expTile: {
     padding: '1.25rem 0',
@@ -56,7 +59,7 @@ export default function ExperienceContent() {
     <>
       {/* Undergraduate Experience */}
       <Grid container spacing={0} className={classes.expTile}>
-        <Grid item sm={4}>
+        <Grid item xs={12} sm={4}>
           <Box display='flex' flexDirection='column' height='100%' justifyContent='space-between'>
 
             {/* Institute & Dates */}
@@ -78,7 +81,7 @@ export default function ExperienceContent() {
         </Grid>
 
         {/* Title, Description, Links */}
-        <Grid item sm={8}>
+        <Grid item xs={12} sm={8}>
           <Typography className={classes.expTitle} variant={'subtitle2'}>
             Robotics Educator
           </Typography>
@@ -90,7 +93,7 @@ export default function ExperienceContent() {
 
       {/* Undergraduate Experience */}
       <Grid container spacing={0} className={classes.expTile}>
-        <Grid item sm={4}>
+        <Grid item xs={12} sm={4}>
           <Box display='flex' flexDirection='column' height='100%' justifyContent='space-between'>
 
             {/* Institute & Dates */}
@@ -111,7 +114,7 @@ export default function ExperienceContent() {
           </Box>
         </Grid>
 
-        <Grid item sm={8}>
+        <Grid item xs={12} sm={8}>
           {/* Title, Description, Links */}
           <Typography className={classes.expTitle} variant={'subtitle2'}>
             Research Assistant
