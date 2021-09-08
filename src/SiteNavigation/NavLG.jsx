@@ -34,7 +34,7 @@ export default function NavLG({ sectionInfo, navLocation, setNavLocation }) {
   const classes = useStyles(theme)
 
   const sectionIds = sectionInfo.map(section => section.id)
-  const [nextSection, setNextSection] = useState('')
+  const [nextSection, setNextSection] = useState(undefined)
   const [atBottom, setAtBottom] = useState(false)
 
   // Move to selected section on click
@@ -49,13 +49,21 @@ export default function NavLG({ sectionInfo, navLocation, setNavLocation }) {
   useEffect(() => {
     // Get href for next section by index in sections array
     const nextSectionIndex = sectionIds.indexOf(navLocation) + 1
-    const nextSectionRef = sectionIds[nextSectionIndex]
 
-    if (!nextSectionRef) {
-      setNextSection(sectionIds[0])
-      setAtBottom(true)
+    console.log(nextSectionIndex)
+
+    if (nextSectionIndex > 0) {
+      const nextSectionRef = sectionIds[nextSectionIndex]
+
+      if (!nextSectionRef) {
+        setNextSection(sectionIds[0])
+        setAtBottom(true)
+      } else {
+        setNextSection(nextSectionRef)
+        setAtBottom(false)
+      }
     } else {
-      setNextSection(nextSectionRef)
+      setNextSection(sectionIds[1])
       setAtBottom(false)
     }
 

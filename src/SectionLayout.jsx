@@ -41,7 +41,7 @@ export default function SectionLayout({ children, id, sectionHeader, ...props })
   const classes = useStyles(props, theme)
 
   const sectionRef = useRef()
-  const onScreen = useOnScreen(sectionRef, '-100px')
+  const onScreen = useOnScreen(sectionRef, '-200px')
 
   useEffect(() => {
     if (onScreen) {
