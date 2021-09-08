@@ -29,7 +29,10 @@ const useStyles = makeStyles((theme) => ({
   sectionStyle: {
     backgroundColor: props => props.backgroundColor,
     margin: 0,
-    padding: '6rem 0'
+    padding: '6rem 0',
+    [theme.breakpoints.down('sm')]: {
+      padding: '1rem 0',
+    }
   }
 }))
 

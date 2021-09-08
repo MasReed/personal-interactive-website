@@ -50,7 +50,7 @@ export default function AboutContent() {
   return (
     <Grid container spacing={0}>
       {/* About Me */}
-      <Grid item sm={4}>
+      <Grid item xs={12} sm={4}>
         <Box display='flex' flexDirection='column' height='100%' justifyContent='space-between'>
           <Box className={classes.aboutGridItemPadding}>
             <Typography color='primary' variant='h3'>About Me</Typography>
@@ -109,7 +109,7 @@ export default function AboutContent() {
       </Grid>
 
       {/* Headshot Image */}
-      <Grid item sm={4}>
+      <Grid item xs={12} sm={4}>
         <Box className={classes.aboutGridItemPadding}>
           <img src='images/finalHeadshot.jpg' alt='Masons headshot'
             style={{ maxHeight: '100%', width: '100%', borderRadius: '3%' }}
@@ -118,7 +118,7 @@ export default function AboutContent() {
       </Grid>
 
       {/* About Me Facts */}
-      <Grid item sm={4}>
+      <Grid item xs={12} sm={4}>
         <Box display='flex' flexDirection='column' height='100%' justifyContent='space-between'>
           <Box className={classes.aboutGridItemPadding}>
             <Typography color='primary' variant='h3'>Details</Typography>
