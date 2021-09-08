@@ -43,7 +43,6 @@ export default function NavLG({ sectionInfo, navLocation, setNavLocation }) {
     linkRef.current.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
-      inline: 'nearest'
     })
   }
 
