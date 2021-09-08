@@ -5,12 +5,16 @@ import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles, useTheme } from '@material-ui/core/styles'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   contentSpacingStyle: {
     margin: '3rem 0',
-    padding: '0 2rem'
+    padding: '0 2rem',
+    [theme.breakpoints.down('sm')]: {
+      margin: '1rem 0',
+      padding: '0',
+    },
   },
   headingStyle: {
     color: props => props.color,
@@ -27,10 +31,11 @@ const useStyles = makeStyles({
     margin: 0,
     padding: '6rem 0'
   }
-})
+}))
 
 export default function SectionLayout({ children, id, sectionHeader, ...props }) {
-  const classes = useStyles(props)
+  const theme = useTheme()
+  const classes = useStyles(props, theme)
 
   const sectionRef = useRef()
   const onScreen = useOnScreen(sectionRef, '-100px')
