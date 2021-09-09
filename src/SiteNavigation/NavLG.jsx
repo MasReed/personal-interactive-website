@@ -50,8 +50,6 @@ export default function NavLG({ sectionInfo, navLocation, setNavLocation }) {
     // Get href for next section by index in sections array
     const nextSectionIndex = sectionIds.indexOf(navLocation) + 1
 
-    console.log(nextSectionIndex)
-
     if (nextSectionIndex > 0) {
       const nextSectionRef = sectionIds[nextSectionIndex]
 
