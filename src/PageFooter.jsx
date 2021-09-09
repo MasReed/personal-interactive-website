@@ -102,7 +102,7 @@ export default function PageFooter () {
                   rel='noopener'
                 >
                   <Box display='flex' direction='row' alignItems='center'>
-                    <GitHubIcon color='textPrimary' />
+                    <GitHubIcon />
                     <Box px={1}>
                       <Typography color='textPrimary' variant='body2'>
                         /MasReed/personal-interactive-website
@@ -118,7 +118,7 @@ export default function PageFooter () {
         <Divider />
 
         {/* Copyright Tag */}
-        <Box text mt={2} mb={0} py={4}>
+        <Box mt={2} mb={0} py={4}>
           <Typography align='center' variant='body1'>
             MasReed &reg; { new Date().getFullYear() }
           </Typography>
