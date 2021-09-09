@@ -6,7 +6,7 @@ import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
 import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
-
+import GitHubIcon from '@material-ui/icons/GitHub';
 import siteMap from './content/siteMap.json'
 import sectionInfo from './content/sectionInfo.json'
 
@@ -91,19 +91,25 @@ export default function PageFooter () {
               </Box>
               <Divider />
               <Box pt={2}>
-                Whats with the name?
+                <Typography color='textPrimary' variant='body2'>
+                  This is my personal website for showcasing my curriculum vitae. It is written using the create-react-app build environment, JavaScript, ReactJS, and Material-ui. This site is hosted on my domain via GitHub Pages! Check out the repository below:
+                </Typography>
               </Box>
               <Box pt={2}>
-                <Typography
-                  component={Link}
+                <Link
                   href='http://www.github.com/MasReed/personal-interactive-website'
                   target='_blank'
                   rel='noopener'
-                  color='textPrimary'
-                  variant='body2'
                 >
-                  Github
-                </Typography>
+                  <Box display='flex' direction='row' alignItems='center'>
+                    <GitHubIcon color='textPrimary' />
+                    <Box px={1}>
+                      <Typography color='textPrimary' variant='body2'>
+                        /MasReed/personal-interactive-website
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Link>
               </Box>
             </Grid>
           </Grid>
