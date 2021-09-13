@@ -70,9 +70,10 @@ export default function ContactForm() {
     event.preventDefault()
 
     const res = await handleSubmit(event)
-    console.log(res)
+    // console.log(res)
+    // console.log(state)
 
-    if (state.succeeded) {
+    if (res.response.status === 200) {
       setToastState(true)
 
       setForm({
@@ -87,7 +88,7 @@ export default function ContactForm() {
   return (
     <>
       <Snackbar
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
         autoHideDuration={5000}
         onClose={() => setToastState(false)}
         open={toastState}
