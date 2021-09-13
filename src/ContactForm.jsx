@@ -22,6 +22,13 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: 'none'
     }
   },
+  input: {
+    '&:-webkit-autofill': {
+      WebkitBackgroundColor: theme.palette.cream.main,
+      WebkitBoxShadow: `0 0 0 1000px ${theme.palette.cream.main} inset`,
+      WebkitTextFillColor: theme.palette.textPrimary
+    }
+  },
   inputSection: {
     margin: '0 0 1.25rem 0',
     padding: '0',
@@ -127,6 +134,7 @@ export default function ContactForm() {
               id='name'
               color='secondary'
               fullWidth
+              inputProps={{ className: classes.input }}
               label='Name'
               name='name'
               onChange={handleChange}
@@ -146,6 +154,7 @@ export default function ContactForm() {
                 id='email'
                 color='secondary'
                 fullWidth
+                inputProps={{ className: classes.input }}
                 label='Email'
                 name='email'
                 onChange={handleChange}
@@ -180,6 +189,7 @@ export default function ContactForm() {
                 id='phone'
                 color='secondary'
                 fullWidth
+                inputProps={{ className: classes.input }}
                 label='Phone'
                 name='phone'
                 onChange={handleChange}
@@ -198,6 +208,7 @@ export default function ContactForm() {
               id='message'
               color='secondary'
               fullWidth
+              inputProps={{ className: classes.input }}
               label='Your Message'
               minRows={4}
               multiline
